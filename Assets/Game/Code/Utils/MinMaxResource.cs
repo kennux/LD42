@@ -15,12 +15,21 @@ public struct MinMaxResoruce
     [SerializeField]
     private float _initial;
 
+    public float maxDelta { get { return _max - this._value; } }
     public float value { get { return this._value; } set { this._value = Mathf.Clamp(value, 0, this._max); } }
     public float percentage { get { return this._value / this._max; } }
 
     public void Init()
     {
         this.value = this._initial;
+    }
+
+    /// <summary>
+    /// Returns a number between 1 to 0 representing the amount of drain that could be drained (removed, -) from this resource right now.
+    /// </summary>
+    public float GetDrainPercentage(float drain)
+    {
+        return Mathf.Min(_value, drain) / drain;
     }
 
     /// <summary>

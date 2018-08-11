@@ -49,7 +49,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
         if (!this.justIssuedMovement)
         {
             this.mechanic.interact.ForceStop();
-            this.mechanic.commandInteract.ForceStop();
+            this.mechanic.commandInteract.TryStop();
             return;
         }
 
@@ -73,7 +73,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
 
     private bool CanStopCommandInteraction()
     {
-        return CanStopInteracting();
+        return CanStopInteracting() && !Essentials.UnityIsNull(this.currentInteractable);
     }
 
     private void OnStartCommandInteraction(IInteractable interactable)

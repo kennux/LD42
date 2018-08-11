@@ -12,8 +12,24 @@ public class OxygenDrainer : MonoBehaviour
     /// </summary>
     public float drainRate = 0.1f;
 
+    /// <summary>
+    /// The amount of damage to take when no oxygen is available per second.
+    /// </summary>
+    public float damageWhenNoOxygenAvailable;
+
     public void Update()
     {
-        Game.instance.ship.oxygen.value -= this.drainRate;
+        float dr = this.drainRate * Time.deltaTime;
+        float d = Game.instance.ship.oxygen.GetDrainPercentage(dr);
+        Game.instance.ship.oxygen.value -= d * dr;
+
+        if (damageWhenNoOxygenAvailable > 0)
+        {
+            float invD = 1f - d;
+            if (invD > 0)
+            {
+                this.GetComponent<HealthMechanic>().takeDamage.Fire(damageWhenNoOxygenAvailable * invD * Time.deltaTime);
+            }
+        }
     }
 }

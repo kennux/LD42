@@ -244,7 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97606ef6be134b4cb85b2722454861e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drainRate: 0.05
+  drainRate: 0.25
+  damageWhenNoOxygenAvailable: 2.5
 --- !u!114 &114787324098922118
 MonoBehaviour:
   m_ObjectHideFlags: 1

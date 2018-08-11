@@ -1,0 +1,5 @@
+<linker>
+       <assembly fullname="Game" preserve="all"/>
+       <assembly fullname="UnityEngine.UI" preserve="all"/>
+       <assembly fullname="UnityEngine.CoreModule" preserve="all"/>
+</linker>

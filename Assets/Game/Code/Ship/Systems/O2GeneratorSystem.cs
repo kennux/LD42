@@ -18,13 +18,13 @@ public class O2GeneratorSystem : ShipSystem
 
     protected override void UpdateSystem(float currentEfficiency)
     {
-        Ship.instance.oxygen.value += this.generationRate * currentEfficiency;
+        Ship.instance.oxygen.value += this.generationRate * currentEfficiency * Time.deltaTime;
     }
 
     protected override float ComputeWorkLoad(float predictedEfficiency)
     {
-        float wouldGenerate = this.generationRate * predictedEfficiency;
-        float willGenerate = Mathf.Min(wouldGenerate, Ship.instance.oxygen.max - Ship.instance.oxygen.value);
+        float wouldGenerate = this.generationRate * predictedEfficiency * Time.deltaTime;
+        float willGenerate = Mathf.Min(wouldGenerate, Ship.instance.oxygen.maxDelta);
 
         return willGenerate / wouldGenerate;
     }
