@@ -29,6 +29,9 @@ GameObject:
   - component: {fileID: 114181244707899172}
   - component: {fileID: 114987229895952538}
   - component: {fileID: 114443560658738524}
+  - component: {fileID: 114482486591271436}
+  - component: {fileID: 114527586361580224}
+  - component: {fileID: 114769500123772026}
   m_Layer: 9
   m_Name: Crewman
   m_TagString: Untagged
@@ -168,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16092558941c5147b549ff027c0db02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canDie: 1
   health: 0
 --- !u!114 &114181244707899172
 MonoBehaviour:
@@ -195,6 +199,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionDistance: 1
+--- !u!114 &114482486591271436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458146508082170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c46f61c6295c4648a1c76708a388d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114527586361580224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458146508082170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d68d1b73264ae48b90c8df1d5159e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exGainRate: 0.0025
 --- !u!114 &114549791920129360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,6 +233,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275403790f1abe64485158a04211cc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114769500123772026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458146508082170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97606ef6be134b4cb85b2722454861e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drainRate: 0.05
 --- !u!114 &114787324098922118
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -33,6 +33,12 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
         this.movement.move.onStop += OnMoveStop;
     }
 
+    public void Update()
+    {
+        if (!Essentials.UnityIsNull(this.currentInteractable))
+            this.mechanic.interactionTick.Fire(this.currentInteractable);
+    }
+
     #region Command Interaction
 
     private bool justIssuedMovement;

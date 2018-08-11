@@ -18,6 +18,11 @@ public class CrewmanInteractionMechanic : BehaviourModelMechanic
     /// </summary>
     public ModelActivity<IInteractable> interact = new ModelActivity<IInteractable>();
 
+    /// <summary>
+    /// Fired every frame in which the crewman is interacting with something from Update().
+    /// </summary>
+    public ModelEvent<IInteractable> interactionTick = new ModelEvent<IInteractable>();
+
     protected override void SetupConstraints()
     {
 

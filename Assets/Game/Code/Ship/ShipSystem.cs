@@ -79,6 +79,9 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         }
     }
 
+    [SerializeField]
+    private float debugCurrentEfficiency;
+
     /// <summary>
     /// How much energy drain could be statisfied this frame, <see cref="UpdateEnergyDrain"/>
     /// </summary>
@@ -101,7 +104,8 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         UpdateInteraction();
 
         UpdateEnergyDrain();
-        UpdateSystem(this.currentEfficiency);
+        this.debugCurrentEfficiency = this.currentEfficiency;
+        UpdateSystem(this.debugCurrentEfficiency);
     }
 
     public void OnDestroy()
