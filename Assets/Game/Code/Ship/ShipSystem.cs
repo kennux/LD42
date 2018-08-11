@@ -7,11 +7,16 @@ using UnityTK;
 [RequireComponent(typeof(ShipSystemModel), typeof(HealthMechanic))]
 public abstract class ShipSystem : MonoBehaviour, IInteractable
 {
+    /// <summary>
+    /// The position from which to interact.
+    /// </summary>
+    public Transform interactionAnchor;
+
     public InteractionType type
     {
         get
         {
-            throw new System.NotImplementedException();
+            return InteractionType.MAN_STATION;
         }
     }
 
@@ -19,10 +24,19 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     {
         get
         {
-            throw new System.NotImplementedException();
+            return _interact;
         }
     }
-    protected InteractionActivity _interact;
+
+    public Vector3 interactionPosition
+    {
+        get
+        {
+            return interactionAnchor.position;
+        }
+    }
+
+    protected InteractionActivity _interact = new InteractionActivity();
 
 
 }

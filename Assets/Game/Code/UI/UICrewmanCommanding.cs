@@ -25,7 +25,7 @@ public class UICrewmanCommanding : SingletonBehaviour<UICrewmanCommanding>
                 var interactable = rh.collider.GetComponentInParent<IInteractable>();
                 if (!ReferenceEquals(interactable, null))
                 {
-                    // Interact?
+                    selected.model.interact.commandInteract.TryStart(interactable);
                     return;
                 }
             }
@@ -34,7 +34,7 @@ public class UICrewmanCommanding : SingletonBehaviour<UICrewmanCommanding>
             if (Physics.Raycast(r, out rh, float.PositiveInfinity, this.floorMask))
             {
                 var p = rh.point;
-                selected.model.movement.move.Try(p);
+                selected.model.movement.move.TryStart(p);
             }
         }
     }

@@ -20,4 +20,10 @@ public class CrewmanModel : BehaviourModel
         get { return this._commanding.Get(this); }
     }
     private LazyLoadedComponentRef<CrewmanMovementMechanic> _commanding = new LazyLoadedComponentRef<CrewmanMovementMechanic>();
+
+    public CrewmanInteractionMechanic interact
+    {
+        get { return this._interact.Get(this); }
+    }
+    private LazyLoadedComponentRef<CrewmanInteractionMechanic> _interact = new LazyLoadedComponentRef<CrewmanInteractionMechanic>();
 }

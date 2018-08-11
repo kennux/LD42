@@ -15,4 +15,9 @@ public interface IInteractable
     /// The activity to be used for interactions.
     /// </summary>
     InteractionActivity interact { get; }
+
+    /// <summary>
+    /// The position from which the crewman are interacting with this interactable.
+    /// </summary>
+    Vector3 interactionPosition { get; }
 }

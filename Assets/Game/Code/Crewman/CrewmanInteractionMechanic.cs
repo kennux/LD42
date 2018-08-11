@@ -6,9 +6,17 @@ using UnityTK.BehaviourModel;
 public class CrewmanInteractionMechanic : BehaviourModelMechanic
 {
     /// <summary>
-    /// Starts interaction with the specified interactable.
+    /// Commanding interaction activity.
+    /// This activity can be used to tell the crewman to interact with something no matter where its located atm.
+    /// This will make the crewman go there and as soon as he arrived interaction starts.
     /// </summary>
-    public ModelActivity<IInteractable> startInteraction = new ModelActivity<IInteractable>();
+    public ModelActivity<IInteractable> commandInteract = new ModelActivity<IInteractable>();
+
+    /// <summary>
+    /// Starts interaction with the specified interactable.
+    /// Note that this starts interaction immediately!
+    /// </summary>
+    public ModelActivity<IInteractable> interact = new ModelActivity<IInteractable>();
 
     protected override void SetupConstraints()
     {
