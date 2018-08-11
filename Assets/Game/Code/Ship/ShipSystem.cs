@@ -129,12 +129,9 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         this._lastEfficiency = this.currentEfficiency;
         UpdateSystem(this._lastEfficiency);
 
-        if (!this.fullHealth)
+        if (!this.fullHealth && !Essentials.UnityIsNull(this.currentInteractor))
         {
-            if (!Essentials.UnityIsNull(this.currentInteractor))
-            {
-                this.health.heal.Fire(this.repairHealRate * Time.deltaTime);
-            }
+            this.health.heal.Fire(this.repairHealRate * Time.deltaTime);
         }
     }
 

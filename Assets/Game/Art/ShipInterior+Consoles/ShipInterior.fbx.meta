@@ -1,14 +1,63 @@
 fileFormatVersion: 2
-guid: 7aa737a6beb45b9479171d6fe99507be
+guid: d6b5798d86637904f8bde40f9cbc3d4f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: BackLeftEngineConsole
+    100002: BackRightEngineConsole
+    100004: CommandConsole
+    100006: LeftEngineConsole
+    100008: LifeSupportConsole
+    100010: MedBayConsole
+    100012: OxygenConsole
+    100014: PowerConsole
+    100016: RightEngineConsole
+    100018: //RootNode
+    100020: Spacehip_Intererior
+    400000: BackLeftEngineConsole
+    400002: BackRightEngineConsole
+    400004: CommandConsole
+    400006: LeftEngineConsole
+    400008: LifeSupportConsole
+    400010: MedBayConsole
+    400012: OxygenConsole
+    400014: PowerConsole
+    400016: RightEngineConsole
+    400018: //RootNode
+    400020: Spacehip_Intererior
     2100000: Mat_Spacehip_Intererior
-    2300000: //RootNode
-    3300000: //RootNode
+    2100002: Mat_Console
+    2100004: Mat_CommandConsole
+    2300000: BackLeftEngineConsole
+    2300002: BackRightEngineConsole
+    2300004: CommandConsole
+    2300006: LeftEngineConsole
+    2300008: LifeSupportConsole
+    2300010: MedBayConsole
+    2300012: OxygenConsole
+    2300014: PowerConsole
+    2300016: RightEngineConsole
+    2300018: Spacehip_Intererior
+    3300000: BackLeftEngineConsole
+    3300002: BackRightEngineConsole
+    3300004: CommandConsole
+    3300006: LeftEngineConsole
+    3300008: LifeSupportConsole
+    3300010: MedBayConsole
+    3300012: OxygenConsole
+    3300014: PowerConsole
+    3300016: RightEngineConsole
+    3300018: Spacehip_Intererior
     4300000: Spacehip_Intererior
+    4300002: BackLeftEngineConsole
+    4300004: BackRightEngineConsole
+    4300006: OxygenConsole
+    4300008: RightEngineConsole
+    4300010: LifeSupportConsole
+    4300012: LeftEngineConsole
+    4300014: MedBayConsole
+    4300016: PowerConsole
+    4300018: CommandConsole
   externalObjects: {}
   materials:
     importMaterials: 1
