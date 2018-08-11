@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityTK;
 
@@ -10,7 +11,9 @@ public class ShipSystemHealthbar : MonoBehaviour
     /// <summary>
     /// The fill image to use for visualizing the health.
     /// </summary>
-    public Image fillImage;
+    [FormerlySerializedAs("fillImage")]
+    public Image healthFillImage;
+    public Image efficiencyFillImage;
 
     /// <summary>
     /// The ship system bound to this health bar.
@@ -25,7 +28,6 @@ public class ShipSystemHealthbar : MonoBehaviour
         {
             this._tracked = value;
             Update();
-            FixedUpdate();
         }
     }
     [Header("Debug")]
@@ -48,14 +50,11 @@ public class ShipSystemHealthbar : MonoBehaviour
 
         // Update position
         this.rectTransform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, this.tracked.transform.position);
-    }
-
-    public void FixedUpdate()
-    {
-        if (Essentials.UnityIsNull(this._tracked))
-            return;
 
         // Update health
-        this.fillImage.fillAmount = this.tracked.health.health.Get() / this.tracked.health.maxHealth.Get();
+        this.healthFillImage.fillAmount = this.tracked.health.health.Get() / this.tracked.health.maxHealth.Get();
+
+        // Update effciency
+        this.efficiencyFillImage.fillAmount = this.tracked.lastEfficiency / this.tracked.theoreticalMaxEfficiency;
     }
 }

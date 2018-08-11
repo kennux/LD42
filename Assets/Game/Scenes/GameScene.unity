@@ -329,7 +329,7 @@ MonoBehaviour:
   efficiencyDestroyed: 0
   efficiencyNormal: 1
   efficiencyMannedAdd: 1
-  debugCurrentEfficiency: 0
+  _lastEfficiency: 0
   generationRate: 0.35
 --- !u!114 &54592401
 MonoBehaviour:

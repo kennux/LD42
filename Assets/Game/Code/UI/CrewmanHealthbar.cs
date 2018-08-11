@@ -25,7 +25,6 @@ public class CrewmanHealthbar : MonoBehaviour
         {
             this._tracked = value;
             Update();
-            FixedUpdate();
         }
     }
     [Header("Debug")]
@@ -48,13 +47,6 @@ public class CrewmanHealthbar : MonoBehaviour
 
         // Update position
         this.rectTransform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, this.tracked.transform.position);
-    }
-
-    public void FixedUpdate()
-    {
-        if (Essentials.UnityIsNull(this._tracked))
-            return;
-
         // Update health
         this.fillImage.fillAmount = this.tracked.model.health.health.Get() / this.tracked.model.health.maxHealth.Get();
     }

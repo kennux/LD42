@@ -84,9 +84,11 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
             return eff;
         }
     }
-
+    
+    public float theoreticalMaxEfficiency { get { return this.efficiencyNormal + this.efficiencyMannedAdd; } }
+    public float lastEfficiency { get { return this._lastEfficiency; } }
     [SerializeField]
-    private float debugCurrentEfficiency;
+    private float _lastEfficiency;
 
     /// <summary>
     /// How much energy drain could be statisfied this frame, <see cref="UpdateEnergyDrain"/>
@@ -114,8 +116,8 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         UpdateInteraction();
 
         UpdateEnergyDrain();
-        this.debugCurrentEfficiency = this.currentEfficiency;
-        UpdateSystem(this.debugCurrentEfficiency);
+        this._lastEfficiency = this.currentEfficiency;
+        UpdateSystem(this._lastEfficiency);
     }
 
     public void OnDestroy()
