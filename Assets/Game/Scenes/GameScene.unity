@@ -818,7 +818,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1458146508082170, guid: 905b4293f4acf1244bea4a75134e2168, type: 2}
       propertyPath: m_Name
-      value: Crewman (1)
+      value: Teach me
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905b4293f4acf1244bea4a75134e2168, type: 2}
@@ -1480,6 +1480,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1458146508082170, guid: 905b4293f4acf1244bea4a75134e2168, type: 2}
+      propertyPath: m_Name
+      value: Kim
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905b4293f4acf1244bea4a75134e2168, type: 2}
   m_IsPrefabAsset: 0
@@ -1729,7 +1733,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1458146508082170, guid: 905b4293f4acf1244bea4a75134e2168, type: 2}
       propertyPath: m_Name
-      value: Crewman (2)
+      value: Guy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905b4293f4acf1244bea4a75134e2168, type: 2}
