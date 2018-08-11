@@ -4,7 +4,7 @@ using UnityTK;
 /// <summary>
 /// Abstract base class for implementing ship systems.
 /// </summary>
-[RequireComponent(typeof(ShipSystemModel), typeof(HealthMechanic))]
+[RequireComponent(typeof(ShipSystemModel), typeof(HealthMechanic), typeof(HealthComponent))]
 public abstract class ShipSystem : MonoBehaviour, IInteractable
 {
     public ShipSystemModel model
@@ -84,9 +84,9 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
             float eff = Mathf.Lerp(this.efficiencyDestroyed, this.efficiencyNormal, health01);
 
             if (this.fullHealth && !Essentials.UnityIsNull(this.currentInteractor))
-                eff += this.currentInteractor.model.exp.getExperienceMultiplicator.Invoke(this.shipSystemType) * this.efficiencyMannedAdd;
+                eff += this.expCurve.Evaluate(this.currentInteractor.model.exp.getExperienceMultiplicator.Invoke(this.shipSystemType)) * this.efficiencyMannedAdd;
 
-            return eff;
+            return eff * this.userLoad;
         }
     }
 
@@ -94,7 +94,12 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     {
         get { return Mathf.Approximately(this.health.health.Get(), this.health.maxHealth.Get()); }
     }
-    
+
+    /// <summary>
+    /// User specified workload.
+    /// </summary>
+    public float userLoad = 1;
+    public AnimationCurve expCurve;
     public float theoreticalMaxEfficiency { get { return this.efficiencyNormal + this.efficiencyMannedAdd; } }
     public float lastEfficiency { get { return this._lastEfficiency; } }
     [SerializeField]
@@ -125,14 +130,17 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     {
         UpdateInteraction();
 
-        UpdateEnergyDrain();
-        this._lastEfficiency = this.currentEfficiency;
-        UpdateSystem(this._lastEfficiency);
-
         if (!this.fullHealth && !Essentials.UnityIsNull(this.currentInteractor))
         {
             this.health.heal.Fire(this.repairHealRate * Time.deltaTime);
         }
+
+        if (Mathf.Approximately(this.userLoad, 0))
+            return;
+
+        UpdateEnergyDrain();
+        this._lastEfficiency = this.currentEfficiency;
+        UpdateSystem(this._lastEfficiency);
     }
 
     public void OnDestroy()
@@ -144,12 +152,20 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     {
         // Compute workload
         this.currentFrameEnergyDrainModifier = 1;
-        float workload = this.ComputeWorkLoad(this.currentEfficiency);
+        float workload = this.ComputeWorkLoad(this.currentEfficiency) * this.userLoad;
 
         float drainTarget = this.energyDrain * Time.deltaTime * workload;
-        float drain = Mathf.Min(Ship.instance.energy, drainTarget);
-        Ship.instance.energy.value -= drain;
-        this.currentFrameEnergyDrainModifier = (drain / drainTarget);
+
+        if (drainTarget == 0)
+        {
+            this.currentFrameEnergyDrainModifier = 1;
+        }
+        else
+        {
+            float drain = Mathf.Min(Ship.instance.energy, drainTarget);
+            Ship.instance.energy.value -= drain;
+            this.currentFrameEnergyDrainModifier = (drain / drainTarget);
+        }
     }
 
     #region Interaction

@@ -44,13 +44,16 @@ public class UICrewmanSelection : SingletonBehaviour<UICrewmanSelection>
             this.marker.SetActive(false);
         }
 
+        if (Util.IsPointerOverUI())
+            return;
+
         // Selection
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit rh;
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(r, out rh, float.PositiveInfinity, this.raycastMask))
+            if (Physics.Raycast(r, out rh, float.PositiveInfinity, this.raycastMask, QueryTriggerInteraction.Ignore))
             {
                 var crewman = rh.collider.GetComponentInParent<Crewman>();
                 if (!ReferenceEquals(crewman, null))

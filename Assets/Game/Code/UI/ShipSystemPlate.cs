@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityTK;
 
-public class ShipSystemHealthbar : MonoBehaviour
+public class ShipSystemPlate : MonoBehaviour
 {
     [Header("Config")]
     /// <summary>
@@ -14,6 +14,8 @@ public class ShipSystemHealthbar : MonoBehaviour
     [FormerlySerializedAs("fillImage")]
     public Image healthFillImage;
     public Image efficiencyFillImage;
+    public Slider userWorkloadSlider;
+    public CanvasGroup canvasGroup;
 
     /// <summary>
     /// The ship system bound to this health bar.
@@ -27,6 +29,7 @@ public class ShipSystemHealthbar : MonoBehaviour
         set
         {
             this._tracked = value;
+            this.userWorkloadSlider.value = value.userLoad;
             Update();
         }
     }
@@ -43,6 +46,8 @@ public class ShipSystemHealthbar : MonoBehaviour
     }
     private LazyLoadedComponentRef<RectTransform> _rectTransform = new LazyLoadedComponentRef<RectTransform>();
 
+    public bool hasLoadSlider { get { return !Mathf.Approximately(this.tracked.energyDrain, 0); } }
+
     public void Update()
     {
         if (Essentials.UnityIsNull(this._tracked))
@@ -56,5 +61,21 @@ public class ShipSystemHealthbar : MonoBehaviour
 
         // Update effciency
         this.efficiencyFillImage.fillAmount = this.tracked.lastEfficiency / this.tracked.theoreticalMaxEfficiency;
+
+        bool isEnabled = ReferenceEquals(UIShipSystemSelection.instance.selectedSystem, this.tracked);
+        this.canvasGroup.alpha = isEnabled ? 1 : 0;
+        this.canvasGroup.blocksRaycasts = isEnabled;
+        this.canvasGroup.interactable = isEnabled;
+        this.userWorkloadSlider.gameObject.SetActive(this.hasLoadSlider);
+    }
+
+    public void OnUserLoadChanged(float val)
+    {
+        this._tracked.userLoad = val;
+    }
+
+    public void Close()
+    {
+        UIShipSystemSelection.instance.Select(null);
     }
 }

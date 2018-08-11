@@ -45,6 +45,11 @@ public class UserInterface : SingletonBehaviour<UserInterface>
         get { return UICrewmanSelection.instance.hasCrewmanSelected; }
     }
 
+    public string shipVelocity
+    {
+        get { return Ship.instance.velocity.value.ToString("0.00"); }
+    }
+
     public CrewmanViewModel selectedCrewmanVM
     {
         get
