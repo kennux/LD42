@@ -1,0 +1,37 @@
+- Traveling through space at a specific velocity
+-> Broken engines = slower velocity
+-> Working engines = small speedup
+-> Working and manned engines = faster speedup
+-> A wall of death is following the ship, if its reaching the ship -> game over
+
+- Ship
+-> Systems
+--> O2 generator
+--> Life support systems
+--> Power generator
+--> Thrusters (multiple)
+--> Med bay
+-> Other
+--> Fires can be started
+---> Fires consume air
+--> Doors between sections / rooms
+---> Closing doors will cause oxygen to be contained in the rooms
+
+- Crewman
+-> Can repair broken systems
+-> Can man systems (1 per system max) to increase their efficiency
+-> Have health and can be damaged by events!
+-> By manning systems they gain exp in running those systems and increase efficiency
+
+- Random events
+-> Easy
+--> Random system failure
+--> Oxygen leak (lowering ship oxygen by a fixed rate)
+
+-> Medium
+--> Solar flare (temporarily disables energy, so every system)
+--> Meteor hit (AoE damage, and creates a fire in the hit room)
+
+-> Hard
+--> Gamma ray burst (causing random system failure of up to 3 system and every crewman looses 50% health)
+--> Spacetime distortions (slows down the crew, but not the ship)
