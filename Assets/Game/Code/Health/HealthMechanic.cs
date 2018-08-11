@@ -13,7 +13,7 @@ public class HealthMechanic : BehaviourModelMechanic
     /// <summary>
     /// The current health of this crewman.
     /// </summary>
-    public ModelProperty<float> health;
+    public ModelProperty<float> health = new ModelProperty<float>();
 
     /// <summary>
     /// Event to be invoked when this object takes damage.

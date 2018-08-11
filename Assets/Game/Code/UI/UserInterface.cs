@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityTK;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class UserInterface : SingletonBehaviour<UserInterface>
 {
@@ -32,5 +33,24 @@ public class UserInterface : SingletonBehaviour<UserInterface>
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public List<CrewmanViewModel> crewmanVMs = new List<CrewmanViewModel>();
+
+    public override void Awake()
+    {
+        base.Awake();
+        Game.instance.crewmen.onAdd += OnAddCrewman;
+        Game.instance.crewmen.onRemove += OnRemoveCrewman;
+    }
+
+    private void OnAddCrewman(Crewman crewman)
+    {
+        this.crewmanVMs.Add(new CrewmanViewModel(crewman));
+    }
+
+    private void OnRemoveCrewman(Crewman crewman)
+    {
+        this.crewmanVMs.RemoveAll((vm) => ReferenceEquals(vm.crewman, crewman));
     }
 }

@@ -39,25 +39,17 @@ public class Game : SingletonBehaviour<Game>
     private double wallOfDeath = 0;
     [SerializeField]
     private double wallOfDeathVelocity = 0;
-
-    public ReadOnlyList<Crewman> crewmen
-    {
-        get
-        {
-            return new ReadOnlyList<Crewman>(this._crewmen);
-        }
-    }
-    [SerializeField]
-    private List<Crewman> _crewmen = new List<Crewman>();
     
+    public ObservableList<Crewman> crewmen = new ObservableList<Crewman>(new List<Crewman>());
+
     public void RegisterCrewman(Crewman crewman)
     {
-        this._crewmen.Add(crewman);
+        this.crewmen.Add(crewman);
     }
 
     public void DeregisterCrewman(Crewman crewman)
     {
-        this._crewmen.Remove(crewman);
+        this.crewmen.Remove(crewman);
     }
 
     private void Update()
@@ -75,7 +67,7 @@ public class Game : SingletonBehaviour<Game>
             // You tried, mate :<
             OnGameOver(false);
         }
-        else if (this.crewmen.count == 0)
+        else if (this.crewmen.Count == 0)
         {
             // Well...
             OnGameOver(false);

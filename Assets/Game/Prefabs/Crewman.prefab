@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af652cb696bb5d42b6f1c0ca846869d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnDist: 1
+  turnDist: 0.5
   agent: {fileID: 195498030183592930}
   isMoving: 0
 --- !u!114 &114443560658738524
@@ -250,7 +250,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 1
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

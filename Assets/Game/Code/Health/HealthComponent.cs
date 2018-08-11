@@ -18,8 +18,14 @@ public class HealthComponent : BehaviourModelMechanicComponent<HealthMechanic>
         }
     }
 
+    private float GetHealth()
+    {
+        return this.health;
+    }
+
     protected override void BindHandlers()
     {
+        this.mechanic.health.SetGetter(this.GetHealth);
         this.health = this.mechanic.maxHealth.Get();
         this.mechanic.takeDamage.handler += OnTakeDamage;
     }

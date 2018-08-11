@@ -47,7 +47,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
             return;
         }
 
-        Debug.Log("Recieved commanded interaction move command for position " + p.position);
+        Debug.Log("Received commanded interaction move command for position " + p.position);
         this.justIssuedMovement = false;
     }
 
