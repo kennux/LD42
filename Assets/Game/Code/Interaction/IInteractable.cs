@@ -20,4 +20,9 @@ public interface IInteractable
     /// The position from which the crewman are interacting with this interactable.
     /// </summary>
     Vector3 interactionPosition { get; }
+
+    /// <summary>
+    /// The quaternion look rotation for the interaction position in worldspace.
+    /// </summary>
+    Quaternion interactionLookRotation { get; }
 }

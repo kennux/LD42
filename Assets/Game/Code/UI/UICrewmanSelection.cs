@@ -56,6 +56,11 @@ public class UICrewmanSelection : SingletonBehaviour<UICrewmanSelection>
                     return;
                 }
             }
+            else
+            {
+                Select(null);
+                return;
+            }
         }
 
         if (!ReferenceEquals(this._selectedCrewman, null))

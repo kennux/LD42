@@ -38,7 +38,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
     private bool justIssuedMovement;
     private IInteractable commandedInteractable;
 
-    private void OnMoveStart(Vector3 position)
+    private void OnMoveStart(MovementParameters p)
     {
         if (!this.justIssuedMovement)
         {
@@ -47,7 +47,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
             return;
         }
 
-        Debug.Log("Recieved commanded interaction move command for position " + position);
+        Debug.Log("Recieved commanded interaction move command for position " + p.position);
         this.justIssuedMovement = false;
     }
 
@@ -79,7 +79,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
             Debug.Log("Cannot reach interactable, issued move command!");
             this.commandedInteractable = interactable;
             this.justIssuedMovement = true;
-            this.movement.move.ForceStart(interactable.interactionPosition);
+            this.movement.move.ForceStart(new MovementParameters(interactable.interactionPosition, interactable.interactionLookRotation));
         }
     }
 

@@ -34,7 +34,7 @@ public class UICrewmanCommanding : SingletonBehaviour<UICrewmanCommanding>
             if (Physics.Raycast(r, out rh, float.PositiveInfinity, this.floorMask))
             {
                 var p = rh.point;
-                selected.model.movement.move.TryStart(p);
+                selected.model.movement.move.TryStart(new MovementParameters(p));
             }
         }
     }

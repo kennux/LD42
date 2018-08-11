@@ -11,7 +11,7 @@ public class CrewmanMovementMechanic : BehaviourModelMechanic
     /// <summary>
     /// Commands the crewman to move to a specific point.
     /// </summary>
-    public ModelActivity<Vector3> move = new ModelActivity<Vector3>();
+    public ModelActivity<MovementParameters> move = new ModelActivity<MovementParameters>();
 
     protected override void SetupConstraints()
     {

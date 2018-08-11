@@ -6,11 +6,14 @@ using UnityEngine.AI;
 
 public class CrewmanMovement : BehaviourModelMechanicComponent<CrewmanMovementMechanic>
 {
+    [Header("Config")]
+    public float turnDist = 1;
     public NavMeshAgent agent;
 
     [Header("Debug")]
     [SerializeField]
     private bool isMoving;
+    private Quaternion? lookRotation;
 
     protected override void BindHandlers()
     {
@@ -20,7 +23,7 @@ public class CrewmanMovement : BehaviourModelMechanicComponent<CrewmanMovementMe
         this.mechanic.move.onStop += OnMoveStop;
     }
 
-    private bool CanStartMove(Vector3 point)
+    private bool CanStartMove(MovementParameters point)
     {
         return true; // this.agent.IsDone();
     }
@@ -30,10 +33,12 @@ public class CrewmanMovement : BehaviourModelMechanicComponent<CrewmanMovementMe
         return this.isMoving;
     }
     
-    private void OnMoveStart(Vector3 point)
+    private void OnMoveStart(MovementParameters point)
     {
         this.isMoving = true;
-        this.agent.SetDestination(point);
+        this.lookRotation = point.lookRotation;
+        this.agent.updateRotation = true;
+        this.agent.SetDestination(point.position);
     }
 
     private void OnMoveStop()
@@ -43,9 +48,26 @@ public class CrewmanMovement : BehaviourModelMechanicComponent<CrewmanMovementMe
 
     private void Update()
     {
-        if (this.isMoving && this.agent.IsDone())
+        if (this.isMoving)
         {
-            this.mechanic.move.TryStop();
+            bool isDone = this.agent.IsDone();
+            if (isDone)
+                this.mechanic.move.TryStop();
+            else if (this.lookRotation.HasValue)
+            {
+                float dist = (this.transform.position - this.agent.pathEndPosition).magnitude;
+                if (dist < this.turnDist)
+                {
+                    this.agent.updateRotation = false;
+                    this.transform.rotation = Quaternion.Slerp(this.transform.rotation, this.lookRotation.Value, 1f - (dist / this.turnDist));
+                }
+                else
+                    this.agent.updateRotation = true;
+            }
+            else if (!this.lookRotation.HasValue)
+            {
+                this.agent.updateRotation = true;
+            }
         }
     }
 }

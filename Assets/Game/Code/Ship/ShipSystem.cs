@@ -36,6 +36,14 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         }
     }
 
+    public Quaternion interactionLookRotation
+    {
+        get
+        {
+            return interactionAnchor.rotation;
+        }
+    }
+
     protected InteractionActivity _interact = new InteractionActivity();
 
 
