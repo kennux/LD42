@@ -4,6 +4,7 @@ using UnityTK;
 /// <summary>
 /// Abstract base class for implementing ship systems.
 /// </summary>
+[RequireComponent(typeof(ShipSystemModel), typeof(HealthMechanic))]
 public abstract class ShipSystem : MonoBehaviour, IInteractable
 {
     public InteractionType type
