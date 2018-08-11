@@ -25,20 +25,22 @@ public class Game : SingletonBehaviour<Game>
     }
 
     [Header("Game Settings")]
-    public double distanceToTravel = 1000000;
+    public float distanceToTravel = 1000000;
     public EventTimelineEntry[] eventTimeline;
     public Ship ship;
-    public double wallOfDeathAcceleration = 10f;
+    public float wallOfDeathAcceleration = 10f;
+    public float wallOfDeathMaxVelocity = 2500f;
     public GameObject uiGameOverFail;
     public GameObject uiGameOverSuccess;
 
     [Header("Debug")]
     [SerializeField]
-    private double traveled = 0;
+    private float traveled = 0;
     [SerializeField]
-    private double wallOfDeath = 0;
+    private float wallOfDeath = 0;
     [SerializeField]
-    private double wallOfDeathVelocity = 0;
+    private float wallOfDeathVelocity = 0;
+    public float playTime;
     
     public ObservableList<Crewman> crewmen = new ObservableList<Crewman>(new List<Crewman>());
 
@@ -50,7 +52,8 @@ public class Game : SingletonBehaviour<Game>
 
     private void Update()
     {
-        this.wallOfDeathVelocity += this.wallOfDeathAcceleration * Time.deltaTime;
+        this.playTime += Time.deltaTime / Time.timeScale;
+        this.wallOfDeathVelocity = Mathf.Clamp(this.wallOfDeathVelocity + this.wallOfDeathAcceleration * Time.deltaTime, 0, this.wallOfDeathMaxVelocity);
         this.wallOfDeath += this.wallOfDeathVelocity * Time.deltaTime;
         this.traveled += this.ship.velocity * Time.deltaTime;
         if (this.traveled >= this.distanceToTravel)

@@ -13,6 +13,7 @@ public class CrewmanViewModel
     public float lifeSupportExp { get { return this.crewman.model.exp.getExperienceMultiplicator.Invoke(ShipSystemType.LIFE_SUPPORT); } }
     public float cockpitExp { get { return this.crewman.model.exp.getExperienceMultiplicator.Invoke(ShipSystemType.COCKPIT); } }
     public float thrusterExp { get { return this.crewman.model.exp.getExperienceMultiplicator.Invoke(ShipSystemType.THRUSTER); } }
+    public float powerGeneratorExp { get { return this.crewman.model.exp.getExperienceMultiplicator.Invoke(ShipSystemType.POWER_GENERATOR); } }
 
     public CrewmanViewModel(Crewman crewman)
     {
