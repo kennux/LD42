@@ -40,6 +40,29 @@ public class UserInterface : SingletonBehaviour<UserInterface>
         get { return 1f - this.wallOfDeathProgress; }
     }
 
+    public bool hasCrewmanSelected
+    {
+        get { return UICrewmanSelection.instance.hasCrewmanSelected; }
+    }
+
+    public CrewmanViewModel selectedCrewmanVM
+    {
+        get
+        {
+            var selected = UICrewmanSelection.instance.selectedCrewman;
+            if (!Essentials.UnityIsNull(selected))
+            {
+                foreach (var model in this.crewmanVMs)
+                {
+                    if (ReferenceEquals(model.crewman, selected))
+                        return model;
+                }
+            }
+
+            return null;
+        }
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -53,6 +76,9 @@ public class UserInterface : SingletonBehaviour<UserInterface>
         base.Awake();
         Game.instance.crewmen.onAdd += OnAddCrewman;
         Game.instance.crewmen.onRemove += OnRemoveCrewman;
+
+        Ship.instance.systems.onAdd += OnAddShipSystem;
+        Ship.instance.systems.onRemove += OnRemoveShipSystem;
     }
 
     private void OnAddShipSystem(ShipSystem system)

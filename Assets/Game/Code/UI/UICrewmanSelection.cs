@@ -25,6 +25,11 @@ public class UICrewmanSelection : SingletonBehaviour<UICrewmanSelection>
     /// The currently selected crewman
     /// </summary>
     private Crewman _selectedCrewman;
+    
+    public bool hasCrewmanSelected
+    {
+        get { return !Essentials.UnityIsNull(this._selectedCrewman); }
+    }
 
     public void Select(Crewman crewman)
     {

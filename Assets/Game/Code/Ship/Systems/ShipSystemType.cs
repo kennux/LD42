@@ -3,5 +3,6 @@
     O2_GENERATOR,
     COCKPIT,
     THRUSTER,
-    MEDBAY
+    MEDBAY,
+    LIFE_SUPPORT
 }

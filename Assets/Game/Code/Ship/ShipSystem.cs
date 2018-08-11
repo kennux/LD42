@@ -7,6 +7,12 @@ using UnityTK;
 [RequireComponent(typeof(ShipSystemModel), typeof(HealthMechanic))]
 public abstract class ShipSystem : MonoBehaviour, IInteractable
 {
+    public ShipSystemModel model
+    {
+        get { return this._model.Get(this); }
+    }
+    private LazyLoadedComponentRef<ShipSystemModel> _model = new LazyLoadedComponentRef<ShipSystemModel>();
+
     /// <summary>
     /// The position from which to interact.
     /// </summary>
@@ -96,6 +102,10 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
 
         this.health.takeDamage.handler += OnTakeDamageInteraction;
         this.health.fullyHealed.handler += OnFullyHealed;
+    }
+
+    public void Start()
+    {
         Ship.instance.systems.Add(this);
     }
 
