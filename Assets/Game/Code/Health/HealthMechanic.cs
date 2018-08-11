@@ -21,6 +21,16 @@ public class HealthMechanic : BehaviourModelMechanic
     public ModelEvent<float> takeDamage = new ModelEvent<float>();
 
     /// <summary>
+    /// Event to be invoked when this object is healed.
+    /// </summary>
+    public ModelEvent<float> heal = new ModelEvent<float>();
+
+    /// <summary>
+    /// Invoked from health component when this mechanic was fully healed.
+    /// </summary>
+    public ModelEvent fullyHealed = new ModelEvent();
+
+    /// <summary>
     /// Fired when <see cref="health"/> reached 0 :<
     /// </summary>
     public ModelEvent die = new ModelEvent();

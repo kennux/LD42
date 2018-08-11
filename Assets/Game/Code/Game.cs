@@ -42,14 +42,10 @@ public class Game : SingletonBehaviour<Game>
     
     public ObservableList<Crewman> crewmen = new ObservableList<Crewman>(new List<Crewman>());
 
-    public void RegisterCrewman(Crewman crewman)
+    public override void Awake()
     {
-        this.crewmen.Add(crewman);
-    }
-
-    public void DeregisterCrewman(Crewman crewman)
-    {
-        this.crewmen.Remove(crewman);
+        base.Awake();
+        System.GC.Collect(); // Collect once initially
     }
 
     private void Update()
