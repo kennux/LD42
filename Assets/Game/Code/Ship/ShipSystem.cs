@@ -69,6 +69,11 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     public float efficiencyMannedAdd = 1;
 
     /// <summary>
+    /// How many health is restored per second when this is being repaired?
+    /// </summary>
+    public float repairHealRate = 1f;
+
+    /// <summary>
     /// Computes current efficiency.
     /// </summary>
     public float currentEfficiency
@@ -78,11 +83,16 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
             var health01 = this.health.health.Get() / this.health.maxHealth.Get();
             float eff = Mathf.Lerp(this.efficiencyDestroyed, this.efficiencyNormal, health01);
 
-            if (!Essentials.UnityIsNull(this.currentInteractor))
+            if (this.fullHealth && !Essentials.UnityIsNull(this.currentInteractor))
                 eff += this.currentInteractor.model.exp.getExperienceMultiplicator.Invoke(this.shipSystemType) * this.efficiencyMannedAdd;
 
             return eff;
         }
+    }
+
+    public bool fullHealth
+    {
+        get { return Mathf.Approximately(this.health.health.Get(), this.health.maxHealth.Get()); }
     }
     
     public float theoreticalMaxEfficiency { get { return this.efficiencyNormal + this.efficiencyMannedAdd; } }
@@ -118,6 +128,14 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         UpdateEnergyDrain();
         this._lastEfficiency = this.currentEfficiency;
         UpdateSystem(this._lastEfficiency);
+
+        if (!this.fullHealth)
+        {
+            if (!Essentials.UnityIsNull(this.currentInteractor))
+            {
+                this.health.heal.Fire(this.repairHealRate * Time.deltaTime);
+            }
+        }
     }
 
     public void OnDestroy()
