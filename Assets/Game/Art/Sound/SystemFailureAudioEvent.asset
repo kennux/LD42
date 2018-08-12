@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743f5e7f11d8e47429384cb3d5e9c737, type: 3}
+  m_Name: SystemFailureAudioEvent
+  m_EditorClassIdentifier: 
+  identifier: SystemFailureAudioEvent
+  tags: []
+  volume:
+    minValue: 0.6746937
+    maxValue: 0.8225602
+  pitch:
+    minValue: 1
+    maxValue: 1.3041825
+  clip: {fileID: 8300000, guid: 5cec8b37d4ac07b4485fe4d822117ace, type: 3}
+  minDistance: 0
+  maxDistance: 100
+  rolloffMode: 0

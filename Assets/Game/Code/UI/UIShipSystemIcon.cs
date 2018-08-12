@@ -12,12 +12,16 @@ public class UIShipSystemIcon : TrackGameObjet
     }
     private LazyLoadedComponentRef<ShipSystem> _system = new LazyLoadedComponentRef<ShipSystem>();
 
+    public Image uiImage;
+    public Color imageTintOk;
+    public Color imageTintDead;
     public Outline outline;
     public Color defaultOutlineColor;
     public Color mannedOutlineColor;
     public Color repairOutlineColor;
     public CanvasGroup canvasGroup;
-    public float flashSpeedWhenNotFullHealth = 5f;
+    public float flashSpeedWhenNotFullHealthMin = 5f;
+    public float flashSpeedWhenNotFullHealthMax = 15f;
 
     public override void Update()
     {
@@ -30,9 +34,13 @@ public class UIShipSystemIcon : TrackGameObjet
         else
             this.outline.effectColor = this.defaultOutlineColor;
 
+        float h = this.system.health.health.Get() / this.system.health.maxHealth.Get();
+        this.uiImage.color = Color.Lerp(this.imageTintDead, this.imageTintOk, h);
+
         if (!this.system.fullHealth && !this.system.isManned)
         {
-            this.canvasGroup.alpha = Mathf.Sin(Time.time * this.flashSpeedWhenNotFullHealth) > 0 ? 1 : 0;
+            float s = Mathf.Lerp(this.flashSpeedWhenNotFullHealthMin, this.flashSpeedWhenNotFullHealthMax, h);
+            this.canvasGroup.alpha = Mathf.Sin(Time.time * s) > 0 ? 1 : 0;
         }
         else
         {

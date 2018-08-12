@@ -5,19 +5,22 @@ using UnityEngine.Serialization;
 public struct MinMaxResoruce
 {
     public float max { get { return this._max; } }
+    public float min { get { return this._min; } }
     public float initial { get { return this._initial; } }
 
     [Header("Config")]
     [FormerlySerializedAs("max")]
     [SerializeField]
     private float _max;
+    [SerializeField]
+    private float _min;
     [FormerlySerializedAs("initial")]
     [SerializeField]
     private float _initial;
 
     public float maxDelta { get { return _max - this._value; } }
-    public float value { get { return this._value; } set { this._value = Mathf.Clamp(value, 0, this._max); } }
-    public float percentage { get { return this._value / this._max; } }
+    public float value { get { return this._value; } set { this._value = Mathf.Clamp(value, this._min, this._max); } }
+    public float percentage { get { return (this._value - this._min) / (this._max - this._min); } }
 
     public void Init()
     {

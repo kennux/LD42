@@ -8,6 +8,7 @@ public class Ship : SingletonBehaviour<Ship>
     public MinMaxResoruce energy;
     public MinMaxResoruce oxygen;
     public float damageMitigation;
+    public float drag = 2f;
 
     public ObservableList<ShipSystem> systems = new ObservableList<ShipSystem>(new System.Collections.Generic.List<ShipSystem>());
 
@@ -48,5 +49,16 @@ public class Ship : SingletonBehaviour<Ship>
 
         ListPool<DistributionUtil<ShipSystem>.DistributionInput>.Return(distribInput);
         ListPool<DistributionUtil<ShipSystem>.DistributionResult>.Return(distribOutput);
+
+        // Simulate drag
+        this.velocity.value -= this.drag * Time.deltaTime;
+    }
+
+    /// <summary>
+    /// Spawns a damage rip.
+    /// </summary>
+    public void SpawnRip(Vector3 closestTo, float maxDist = 5f)
+    {
+
     }
 }

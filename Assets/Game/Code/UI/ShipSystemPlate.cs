@@ -15,6 +15,7 @@ public class ShipSystemPlate : MonoBehaviour
     public Image healthFillImage;
     public Image efficiencyFillImage;
     public Slider userWorkloadSlider;
+    public Text energyText;
     public GameObject userWorkloadSliderToggle;
     public CanvasGroup canvasGroup;
 
@@ -71,6 +72,7 @@ public class ShipSystemPlate : MonoBehaviour
         this.canvasGroup.interactable = isEnabled;
         this.tracked.userLoad = this.userWorkloadSlider.value;
         this.userWorkloadSliderToggle.SetActive(this.hasLoadSlider);
+        this.energyText.text = "Energy: " + this.tracked.currentEnergyConsumptionPerSecond.ToString("0.0");
     }
 
     public void Close()

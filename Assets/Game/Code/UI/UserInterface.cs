@@ -47,8 +47,10 @@ public class UserInterface : SingletonBehaviour<UserInterface>
 
     public string shipVelocity
     {
-        get { return Ship.instance.velocity.value.ToString("0.00"); }
+        get { return "Ship Velocty: " + Ship.instance.velocity.value.ToString("0.00") + "  <color=\"black\">Edge of Space Velocity: " + Game.instance.wallOfDeathVelocity.ToString("0.00") + "</color>"; }
     }
+
+    public bool isPaused { get { return Game.instance.isPaused; } }
 
     public CrewmanViewModel selectedCrewmanVM
     {
@@ -68,9 +70,9 @@ public class UserInterface : SingletonBehaviour<UserInterface>
         }
     }
 
-    public void Restart()
+    public void ToMainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(0);
     }
 
     public List<CrewmanViewModel> crewmanVMs = new List<CrewmanViewModel>();

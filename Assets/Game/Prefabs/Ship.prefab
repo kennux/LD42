@@ -252,7 +252,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1526598349433266
 GameObject:
@@ -1383,6 +1383,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _lastEfficiency: 0
+  currentEnergyConsumptionPerSecond: 0
   generationRate: 1.5
 --- !u!114 &114007034599119740
 MonoBehaviour:
@@ -1414,7 +1415,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.4
   repairHealRate: 1
-  userLoad: 0.25
+  userLoad: 0.1
   expCurve:
     serializedVersion: 2
     m_Curve:
@@ -1449,8 +1450,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _lastEfficiency: 0
+  currentEnergyConsumptionPerSecond: 0
   isCockpit: 0
-  acceleration: 2.5
+  acceleration: 1
 --- !u!114 &114069636286183880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1494,7 +1496,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.5
   repairHealRate: 1
-  userLoad: 0.25
+  userLoad: 0.1
   expCurve:
     serializedVersion: 2
     m_Curve:
@@ -1529,8 +1531,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _lastEfficiency: 0
+  currentEnergyConsumptionPerSecond: 0
   isCockpit: 1
-  acceleration: 4
+  acceleration: 1.5
 --- !u!114 &114102812529961518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1609,6 +1612,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _lastEfficiency: 0
+  currentEnergyConsumptionPerSecond: 0
   generationRate: 6
 --- !u!114 &114113938444160336
 MonoBehaviour:
@@ -1627,7 +1631,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.4
   repairHealRate: 1
-  userLoad: 0.25
+  userLoad: 0.1
   expCurve:
     serializedVersion: 2
     m_Curve:
@@ -1662,8 +1666,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _lastEfficiency: 0
+  currentEnergyConsumptionPerSecond: 0
   isCockpit: 0
-  acceleration: 2.5
+  acceleration: 1
 --- !u!114 &114132972124982064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1707,6 +1712,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _lastEfficiency: 0
+  currentEnergyConsumptionPerSecond: 0
   damageMitigation: 0.2
 --- !u!114 &114138062122331772
 MonoBehaviour:
@@ -1782,7 +1788,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.4
   repairHealRate: 1
-  userLoad: 0.25
+  userLoad: 0.1
   expCurve:
     serializedVersion: 2
     m_Curve:
@@ -1817,8 +1823,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _lastEfficiency: 0
+  currentEnergyConsumptionPerSecond: 0
   isCockpit: 0
-  acceleration: 2.5
+  acceleration: 1
 --- !u!114 &114245190710801350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1860,7 +1867,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.4
   repairHealRate: 1
-  userLoad: 0.25
+  userLoad: 0.1
   expCurve:
     serializedVersion: 2
     m_Curve:
@@ -1895,8 +1902,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _lastEfficiency: 0
+  currentEnergyConsumptionPerSecond: 0
   isCockpit: 0
-  acceleration: 2.5
+  acceleration: 1
 --- !u!114 &114283153685494070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1975,6 +1983,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _lastEfficiency: 0
+  currentEnergyConsumptionPerSecond: 0
   healPerSecond: 5
   crewmanInRange: []
 --- !u!114 &114325832205464826
@@ -2049,7 +2058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity:
     _max: 2000
-    _initial: 500
+    _initial: 100
     _value: 0
   energy:
     _max: 1000

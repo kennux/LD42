@@ -104,8 +104,12 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     public AnimationCurve expCurve;
     public float theoreticalMaxEfficiency { get { return this.efficiencyNormal + this.efficiencyMannedAdd; } }
     public float lastEfficiency { get { return this._lastEfficiency; } }
+
+    [Header("Debug")]
     [SerializeField]
     private float _lastEfficiency;
+    
+    public float currentEnergyConsumptionPerSecond;
 
     /// <summary>
     /// How much energy drain could be statisfied this frame, <see cref="UpdateEnergyDrain"/>
@@ -132,14 +136,15 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     {
         UpdateRepair();
 
-        if (Mathf.Approximately(this.userLoad, 0))
+        this._lastEfficiency = this.currentEfficiency;
+        if (Mathf.Approximately(this.userLoad, 0) || Mathf.Approximately(this._lastEfficiency, 0))
         {
+            this.currentEnergyConsumptionPerSecond = 0;
             this._lastEfficiency = 0;
             UpdateSystem(this._lastEfficiency);
         }
         else
         {
-            this._lastEfficiency = this.currentEfficiency;
             UpdateSystem(this._lastEfficiency);
         }
     }
@@ -157,9 +162,13 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     /// <returns></returns>
     public float GetEnergyRequired()
     {
-        // Compute workload
         this.currentFrameEnergyModifier = 1;
-        float workload = this.ComputeWorkLoad(this.currentEfficiency) * this.userLoad;
+        float eff = this.currentEfficiency;
+        if (Mathf.Approximately(eff, 0))
+            return 0;
+
+        // Compute workload
+        float workload = this.ComputeWorkLoad(eff) * this.userLoad;
 
         float drainTarget = this.energyDrain * Time.deltaTime * workload;
         return drainTarget;
@@ -172,6 +181,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     /// <param name="energyAmount">Amount of energy available for this system.</param>
     public void ConsumeEnergy(float energyAmount)
     {
+        this.currentEnergyConsumptionPerSecond = energyAmount / Time.deltaTime;
         float energyRequired = GetEnergyRequired();
         if (Mathf.Approximately(energyRequired, 0))
         {
