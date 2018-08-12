@@ -9,7 +9,7 @@ public abstract class GameEvent : ManagedScriptableObject
     /// <summary>
     /// The text shown in the event notification.
     /// </summary>
-    public abstract string uiText { get; }
+    public string uiText;
 
     /// <summary>
     /// Executes the events.

@@ -8,14 +8,6 @@ public class OxygenLeakEvent : GameEvent
     public float oxygenPercentageLeaked;
     public AudioEvent nonSpatialAudio;
 
-    public override string uiText
-    {
-        get
-        {
-            return "Oxygen leak!";
-        }
-    }
-
     public override void Execute()
     {
         Ship.instance.oxygen.value -= Ship.instance.oxygen.max * this.oxygenPercentageLeaked * (1f - Ship.instance.damageMitigation);

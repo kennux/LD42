@@ -134,6 +134,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
 
     public void FixedUpdate()
     {
+        UpdateInteraction();
         UpdateRepair();
 
         this._lastEfficiency = this.currentEfficiency;

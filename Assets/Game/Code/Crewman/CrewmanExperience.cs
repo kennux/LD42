@@ -13,7 +13,7 @@ public class CrewmanExperience : BehaviourModelMechanicComponent<CrewmanExperien
     /// <summary>
     /// The rate at which units gain exp in exp/s.
     /// </summary>
-    public float exGainRate = 0.0025f;
+    public float expGainRate = 0.002f;
 
     public CrewmanInteractionMechanic interaction
     {
@@ -34,7 +34,7 @@ public class CrewmanExperience : BehaviourModelMechanicComponent<CrewmanExperien
         if (interactable is ShipSystem)
         {
             var ss = interactable as ShipSystem;
-            AddExperience(ss.shipSystemType, this.exGainRate * Time.fixedDeltaTime);
+            AddExperience(ss.shipSystemType, this.expGainRate * Time.fixedDeltaTime);
         }
     }
 

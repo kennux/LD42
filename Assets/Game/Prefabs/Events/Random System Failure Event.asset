@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f7c100f4878864fa66aaaa0f613ecf, type: 3}
   m_Name: Random System Failure Event
   m_EditorClassIdentifier: 
-  identifier: 
+  identifier: Random System Failure Event
   tags: []
+  uiText: Critical system failure!
   nonSpatialAudio: {fileID: 0}

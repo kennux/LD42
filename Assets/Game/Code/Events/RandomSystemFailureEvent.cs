@@ -6,15 +6,7 @@ using UnityTK.Audio;
 public class RandomSystemFailureEvent : GameEvent
 {
     public AudioEvent nonSpatialAudio;
-
-    public override string uiText
-    {
-        get
-        {
-            return "System failure!";
-        }
-    }
-
+    
     public override void Execute()
     {
         var system = Ship.instance.systems[Random.Range(0, Ship.instance.systems.Count)];

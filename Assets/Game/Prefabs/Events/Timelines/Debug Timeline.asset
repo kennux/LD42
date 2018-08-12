@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 626ac90e5255b8d4dad93fc2949eed5a, type: 3}
-  m_Name: Event Timeline
+  m_Name: Debug Timeline
   m_EditorClassIdentifier: 
   entries:
   - traveledDistance: 250
@@ -21,7 +21,7 @@ MonoBehaviour:
   - traveledDistance: 400
     spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
   - traveledDistance: 450
-    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
   - traveledDistance: 500
     spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
   - traveledDistance: 550

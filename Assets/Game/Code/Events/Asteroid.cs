@@ -71,7 +71,7 @@ public class Asteroid : MonoBehaviour
         }
 
         // Hull breaching
-        if (Random.value > this.hullBreachChance)
+        if (Random.value < this.hullBreachChance)
         {
             Ship.instance.SpawnHullBreach(this.transform.position);
         }

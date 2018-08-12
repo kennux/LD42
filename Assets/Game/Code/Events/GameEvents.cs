@@ -13,6 +13,9 @@ public class GameEvents : SingletonBehaviour<GameEvents>
     public event System.Action<GameEvent> onExecuteEvent;
 
     [Header("Config")]
+    public EventTimeline[] easyTimelines;
+    public EventTimeline[] mediumTimelines;
+    public EventTimeline[] hardTimelines;
     public EventTimeline[] timelines;
 
     [Header("Debug")]
@@ -23,6 +26,13 @@ public class GameEvents : SingletonBehaviour<GameEvents>
 
     public void Start()
     {
+        switch (MainMenu.difficulty)
+        {
+            case GameDifficulty.EASY: this.timelines = this.easyTimelines; break;
+            case GameDifficulty.MEDIUM: this.timelines = this.mediumTimelines; break;
+            case GameDifficulty.HARD: this.timelines = this.hardTimelines; break;
+        }
+        MainMenu.difficulty = GameDifficulty.NULL;
         this.timeline = this.timelines.RandomItem();
 
         Game.instance.onPreTravel += OnPreTravel;

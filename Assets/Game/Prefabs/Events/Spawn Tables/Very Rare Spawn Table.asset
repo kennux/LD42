@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c26405cf6305146ae72286d789a1ae, type: 3}
+  m_Name: Very Rare Spawn Table
+  m_EditorClassIdentifier: 
+  entries:
+  - evt: {fileID: 11400000, guid: 34a4e8595f543494587b0f1a543ea766, type: 2}
+    probability: 1
+  - evt: {fileID: 11400000, guid: e9728f90a34dcab45a09d2313582f072, type: 2}
+    probability: 1.5
+  - evt: {fileID: 11400000, guid: c4e6071abe8f8c34c93b37dd64c81132, type: 2}
+    probability: 0.5

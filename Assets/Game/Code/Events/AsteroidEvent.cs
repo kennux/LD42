@@ -7,15 +7,7 @@ public class AsteroidEvent : GameEvent
 {
     public int asteroidsToFire;
     public Asteroid prefab;
-
-    public override string uiText
-    {
-        get
-        {
-            return "Meteorite incoming!";
-        }
-    }
-
+    
     public override void Execute()
     {
         // Find targets

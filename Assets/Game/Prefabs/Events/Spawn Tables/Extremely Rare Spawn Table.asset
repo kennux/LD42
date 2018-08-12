@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c26405cf6305146ae72286d789a1ae, type: 3}
-  m_Name: Common Spawn Table
+  m_Name: Extremely Rare Spawn Table
   m_EditorClassIdentifier: 
   entries:
-  - evt: {fileID: 11400000, guid: 5af5df55dd44099428992eaa5a52ea82, type: 2}
+  - evt: {fileID: 11400000, guid: c3d829b845d92f647be678b835341ad2, type: 2}
     probability: 1
-  - evt: {fileID: 11400000, guid: 8d3c7a39c530535439ad4872ece440d2, type: 2}
-    probability: 1
+  - evt: {fileID: 11400000, guid: ae0aaf24d934fc14083b47542868f2bf, type: 2}
+    probability: 0.5

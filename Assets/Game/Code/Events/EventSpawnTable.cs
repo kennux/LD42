@@ -50,8 +50,26 @@ public class EventSpawnTable : ScriptableObject
         for (int i = 0; i < probabilityTable.Count; i++)
         {
             var e = probabilityTable[i];
-            float startProbability = (i == 0) ? 0 : e.probability;
-            float endProbability = (i == probabilityTable.Count - 1) ? 1 : probabilityTable[i + 1].probability;
+
+            float startProbability = 0, endProbability = 0;
+            if (i == 0)
+            {
+                // First element!
+                startProbability = 0;
+                endProbability = probabilityTable[i].probability;
+            }
+            else if (i == probabilityTable.Count - 1)
+            {
+                // Last element
+                startProbability = probabilityTable[i].probability;
+                endProbability = 1;
+            }
+            else
+            {
+                // Middle element
+                startProbability = probabilityTable[i].probability;
+                endProbability = probabilityTable[i+1].probability;
+            }
 
             if (rnd >= startProbability && rnd <= endProbability)
                 return e.evt;

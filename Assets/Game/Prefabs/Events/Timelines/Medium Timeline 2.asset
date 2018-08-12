@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626ac90e5255b8d4dad93fc2949eed5a, type: 3}
+  m_Name: Medium Timeline 2
+  m_EditorClassIdentifier: 
+  entries:
+  - traveledDistance: 5000
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 13574.606
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 21640.926
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 29831.11
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 39019.582
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 48702.34
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 57791.96
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 91816.42
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 127969.484
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 164865.88
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 199538.48
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 208103.69
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 255735.38
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 288969.8
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 319433.5
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 353494.38
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 397700.56
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 429594.03
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 471295.25
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 515546.47
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 524015.97
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 577631.44
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 586316.8
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 631591.8
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 674287.6
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 683310.5
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 691347.75
+    spawnTable: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
+  - traveledDistance: 768625.2
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 777786.44
+    spawnTable: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
+  - traveledDistance: 846182.6
+    spawnTable: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
+  - traveledDistance: 924571
+    spawnTable: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
+  - traveledDistance: 999363.5
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}

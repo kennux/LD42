@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0cf061898150140bc417874c1f658e, type: 3}
+  m_Name: Easy Generator
+  m_EditorClassIdentifier: 
+  timelineLength: 1000000
+  rules:
+  - table: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+    recoveryPeriodMin: 10000
+    recoveryPeriodMax: 25000
+    minTraveled: 5000
+    maxTraveled: 1000000
+  - table: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+    recoveryPeriodMin: 40000
+    recoveryPeriodMax: 50000
+    minTraveled: 100000
+    maxTraveled: 1000000
+  - table: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+    recoveryPeriodMin: 50000
+    recoveryPeriodMax: 75000
+    minTraveled: 300000
+    maxTraveled: 1000000
+  - table: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
+    recoveryPeriodMin: 750000
+    recoveryPeriodMax: 100000
+    minTraveled: 700000
+    maxTraveled: 1000000
+  targets:
+  - {fileID: 11400000, guid: 536bf1bebf892eb4f946afca3fbbdaeb, type: 2}
+  - {fileID: 11400000, guid: 0714d06bf3e481f4aa1793161c73e2bb, type: 2}
+  - {fileID: 11400000, guid: 6a7caa287e793e8489a4a97a31b3620f, type: 2}

@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfb05f5240f47a43b4215b13772b568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 1
+  interactionDistance: 0.2
 --- !u!114 &114482486591271436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d68d1b73264ae48b90c8df1d5159e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exGainRate: 0.0025
+  expGainRate: 0.002
 --- !u!114 &114549791920129360
 MonoBehaviour:
   m_ObjectHideFlags: 1

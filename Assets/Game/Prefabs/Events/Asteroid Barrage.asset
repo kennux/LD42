@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea69be0484691240be3962b011dae81, type: 3}
+  m_Name: Asteroid Barrage
+  m_EditorClassIdentifier: 
+  identifier: Asteroid Event
+  tags: []
+  uiText: Asteroids incoming!
+  asteroidsToFire: 3
+  prefab: {fileID: 114447558265161148, guid: 3c717263c715c1042b9c488b5eccd1fd, type: 2}

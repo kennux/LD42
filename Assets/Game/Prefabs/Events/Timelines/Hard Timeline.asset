@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626ac90e5255b8d4dad93fc2949eed5a, type: 3}
+  m_Name: Hard Timeline
+  m_EditorClassIdentifier: 
+  entries:
+  - traveledDistance: 5000
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 12660.68
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 21787.178
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 29863.377
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 38224.695
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 48195.715
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 69563.016
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 78299.58
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 91883.62
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 115898.555
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 139653.48
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 160186.64
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 169484.02
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 191440.05
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 203126.16
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 222467.1
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 237679.08
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 278978.03
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 286971.97
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 294594.9
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 303658.72
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 312686.75
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 331675.38
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 379305.97
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 390357.66
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 428620.1
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 437651.8
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 446994.16
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 474835.2
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 497344.16
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 505609.44
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 513461.44
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 538009
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 562585.4
+    spawnTable: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
+  - traveledDistance: 647982.06
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 658179.25
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 704237.44
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 736632.25
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 746030.94
+    spawnTable: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
+  - traveledDistance: 771792.8
+    spawnTable: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
+  - traveledDistance: 842566.5
+    spawnTable: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
+  - traveledDistance: 930681.8
+    spawnTable: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
+  - traveledDistance: 938680.56
+    spawnTable: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
+  - traveledDistance: 963100.06
+    spawnTable: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}

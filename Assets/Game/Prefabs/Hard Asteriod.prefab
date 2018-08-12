@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 82477983183831404}
   - component: {fileID: 114316429193077532}
   m_Layer: 0
-  m_Name: Asteriod
+  m_Name: Hard Asteriod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,4 +274,4 @@ MonoBehaviour:
   aoeLayerMask:
     serializedVersion: 2
     m_Bits: 1536
-  ripSpawnChance: 0.2
+  hullBreachChance: 0.5

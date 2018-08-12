@@ -9,11 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ea69be0484691240be3962b011dae81, type: 3}
-  m_Name: Asteroid Event
+  m_Name: Easy Asteroid Event
   m_EditorClassIdentifier: 
   identifier: Asteroid Event
   tags: []
-  difficulty: 0
   uiText: Asteroid incoming!
   asteroidsToFire: 1
-  prefab: {fileID: 114447558265161148, guid: 3c717263c715c1042b9c488b5eccd1fd, type: 2}
+  prefab: {fileID: 114447558265161148, guid: 2bbd90699dda3734497a12976af62321, type: 2}

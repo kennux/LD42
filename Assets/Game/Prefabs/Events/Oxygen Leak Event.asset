@@ -13,5 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: Oxygen Leak Event
   tags: []
+  uiText: Oxygen leak (40% loss)!
   oxygenPercentageLeaked: 0.4
   nonSpatialAudio: {fileID: 11400000, guid: 499b0b605fb35e44e8dde9171d1b7bb6, type: 2}
