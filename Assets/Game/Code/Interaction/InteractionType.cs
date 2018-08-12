@@ -4,7 +4,6 @@
 /// </summary>
 public enum InteractionType
 {
-    FIRE_EXTINGUISH,
     MAN_STATION,
     REPAIR
 }
