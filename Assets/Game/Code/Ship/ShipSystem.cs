@@ -88,7 +88,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
             if (this.fullHealth && !Essentials.UnityIsNull(this.currentInteractor))
                 eff += this.expCurve.Evaluate(this.currentInteractor.model.exp.getExperienceMultiplicator.Invoke(this.shipSystemType)) * this.efficiencyMannedAdd;
 
-            return eff * this.userLoad;
+            return eff * this.userLoad * this.currentFrameEnergyModifier;
         }
     }
 
@@ -110,7 +110,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     /// <summary>
     /// How much energy drain could be statisfied this frame, <see cref="UpdateEnergyDrain"/>
     /// </summary>
-    private float currentFrameEnergyDrainModifier;
+    private float currentFrameEnergyModifier;
 
     public void Awake()
     {
@@ -130,12 +130,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
 
     public void Update()
     {
-        UpdateInteraction();
-
-        if (!this.fullHealth && !Essentials.UnityIsNull(this.currentInteractor))
-        {
-            this.health.heal.Fire(this.repairHealRate * Time.deltaTime);
-        }
+        UpdateRepair();
 
         if (Mathf.Approximately(this.userLoad, 0))
         {
@@ -144,7 +139,6 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         }
         else
         {
-            UpdateEnergyDrain();
             this._lastEfficiency = this.currentEfficiency;
             UpdateSystem(this._lastEfficiency);
         }
@@ -155,25 +149,50 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         Ship.instance.systems.Remove(this);
     }
 
-    private void UpdateEnergyDrain()
+    #region Logic update
+
+    /// <summary>
+    /// Gets the amount of energy that would be required to run this system at full capacity.
+    /// </summary>
+    /// <returns></returns>
+    public float GetEnergyRequired()
     {
         // Compute workload
-        this.currentFrameEnergyDrainModifier = 1;
+        this.currentFrameEnergyModifier = 1;
         float workload = this.ComputeWorkLoad(this.currentEfficiency) * this.userLoad;
 
         float drainTarget = this.energyDrain * Time.deltaTime * workload;
+        return drainTarget;
+    }
 
-        if (drainTarget == 0)
+    /// <summary>
+    /// Lets this ship system consume energy for the current frame.
+    /// Will update <see cref="currentFrameEnergyModifier"/>
+    /// </summary>
+    /// <param name="energyAmount">Amount of energy available for this system.</param>
+    public void ConsumeEnergy(float energyAmount)
+    {
+        float energyRequired = GetEnergyRequired();
+        if (Mathf.Approximately(energyRequired, 0))
         {
-            this.currentFrameEnergyDrainModifier = 1;
+            this.currentFrameEnergyModifier = 1;
         }
         else
         {
-            float drain = Mathf.Min(Ship.instance.energy, drainTarget);
-            Ship.instance.energy.value -= drain;
-            this.currentFrameEnergyDrainModifier = (drain / drainTarget);
+            this.currentFrameEnergyModifier = (energyAmount / energyRequired);
+            Ship.instance.energy.value -= energyAmount;
         }
     }
+
+    private void UpdateRepair()
+    {
+        if (!this.fullHealth && !Essentials.UnityIsNull(this.currentInteractor))
+        {
+            this.health.heal.Fire(this.repairHealRate * Time.deltaTime);
+        }
+    }
+
+    #endregion
 
     #region Interaction
 

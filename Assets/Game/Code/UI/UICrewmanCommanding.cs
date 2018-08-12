@@ -20,7 +20,7 @@ public class UICrewmanCommanding : SingletonBehaviour<UICrewmanCommanding>
             RaycastHit rh;
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(r, out rh, float.PositiveInfinity, this.interactableMask))
+            if (!Input.GetKey(KeyCode.LeftShift) && Physics.Raycast(r, out rh, float.PositiveInfinity, this.interactableMask))
             {
                 var interactable = rh.collider.GetComponentInParent<IInteractable>();
                 if (!ReferenceEquals(interactable, null))

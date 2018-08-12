@@ -26,6 +26,9 @@ public class O2GeneratorSystem : ShipSystem
         float wouldGenerate = this.generationRate * predictedEfficiency * Time.deltaTime;
         float willGenerate = Mathf.Min(wouldGenerate, Ship.instance.oxygen.maxDelta);
 
+        if (Mathf.Approximately(wouldGenerate, 0))
+            return 0;
+
         return willGenerate / wouldGenerate;
     }
 }

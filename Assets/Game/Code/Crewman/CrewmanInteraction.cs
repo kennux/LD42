@@ -69,7 +69,19 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
 
     private bool CanStartCommandInteraction(IInteractable interactable)
     {
-        return interactable.interact.CanStart(this.crewman);
+        if (interactable.interact.CanStart(this.crewman))
+        {
+            // Anyone else on this job yet?
+            foreach (var crewman in Game.instance.crewmen)
+            {
+                if (crewman.GetComponent<CrewmanInteraction>().commandedInteractable == interactable)
+                    return false;
+            }
+
+            return true;
+        }
+
+        return false;
     }
 
     private bool CanStopCommandInteraction()

@@ -36,9 +36,37 @@ public class MedBaySystem : ShipSystem
         this.crewmanInRange.Remove(cm);
     }
 
-    private static void DistributeHeal(List<Heal> heal, float efficiency, float healAmt)
+    private void DistributeHeal(List<Heal> heal, float efficiency, float healAmt)
     {
+        // Update systems
+        List<DistributionUtil<Crewman>.DistributionInput> distribInput = ListPool<DistributionUtil<Crewman>.DistributionInput>.Get();
+        List<DistributionUtil<Crewman>.DistributionResult> distribOutput = ListPool<DistributionUtil<Crewman>.DistributionResult>.Get();
 
+        // Build distrib input
+        foreach (var crewman in this.crewmanInRange)
+        {
+            distribInput.Add(new DistributionUtil<Crewman>.DistributionInput()
+            {
+                obj = crewman,
+                requestedAmount = crewman.model.health.maxHealth.Get() - crewman.model.health.health.Get()
+            });
+        }
+
+        // Run distrib algorithm
+        DistributionUtil<Crewman>.ReqDistribute(distribInput, distribOutput, healAmt);
+
+        // Consume
+        foreach (var res in distribOutput)
+        {
+            heal.Add(new Heal()
+            {
+                man = res.obj,
+                amt = res.amount
+            });
+        }
+
+        ListPool<DistributionUtil<Crewman>.DistributionInput>.Return(distribInput);
+        ListPool<DistributionUtil<Crewman>.DistributionResult>.Return(distribOutput);
     }
 
     protected override float ComputeWorkLoad(float predictedEfficiency)
