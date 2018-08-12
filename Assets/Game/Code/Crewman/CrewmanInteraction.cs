@@ -23,6 +23,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
         this.mechanic.interact.RegisterStopCondition(CanStopInteracting);
         this.mechanic.interact.onStart += OnStartInteracting;
         this.mechanic.interact.onStop += OnStopInteracting;
+        this.mechanic.interact.RegisterActivityGetter(IsInteracting);
 
         this.mechanic.commandInteract.RegisterStartCondition(CanStartCommandInteraction);
         this.mechanic.commandInteract.RegisterStopCondition(CanStopCommandInteraction);
@@ -80,6 +81,9 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
     {
         Debug.Log("Started commanded interacting with " + interactable);
 
+        if (this.mechanic.interact.IsActive())
+            this.mechanic.interact.ForceStop();
+
         if (!this.mechanic.interact.TryStart(interactable))
         {
             Debug.Log("Cannot reach interactable, issued move command!");
@@ -109,7 +113,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
 
     private bool CanStopInteracting()
     {
-        return !ReferenceEquals(this.currentInteractable, null) && this.currentInteractable.interact.CanStop();
+        return IsInteracting() && this.currentInteractable.interact.CanStop();
     }
 
     private void OnStartInteracting(IInteractable interactable)
@@ -127,6 +131,11 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
         Debug.Log("Stopped interacting with " + currentInteractable);
         this.currentInteractable.interact.ForceStop();
         this.currentInteractable = null;
+    }
+
+    private bool IsInteracting()
+    {
+        return !Essentials.UnityIsNull(this.currentInteractable);
     }
 
     #endregion

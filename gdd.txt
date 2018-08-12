@@ -7,7 +7,8 @@
 - Ship
 -> Systems
 --> O2 generator
---> Life support systems
+--> Shields
+---> They mitigate damage the random events do for a ridiculous energy cost
 --> Power generator
 --> Thrusters (multiple)
 --> Med bay
@@ -35,3 +36,4 @@
 -> Hard
 --> Gamma ray burst (causing random system failure of up to 3 system and every crewman looses 50% health)
 --> Spacetime distortions (slows down the crew, but not the ship)
+--> Meteor barrage (3 meteor hits)
