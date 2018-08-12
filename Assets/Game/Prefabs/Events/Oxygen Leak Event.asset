@@ -15,4 +15,4 @@ MonoBehaviour:
   tags: []
   uiText: Oxygen leak (40% loss)!
   oxygenPercentageLeaked: 0.4
-  nonSpatialAudio: {fileID: 11400000, guid: 499b0b605fb35e44e8dde9171d1b7bb6, type: 2}
+  nonSpatialAudio: {fileID: 11400000, guid: 7d69e9b2a57295f4980391e94482d892, type: 2}

@@ -38,10 +38,13 @@ public class EventSpawnTable : ScriptableObject
         }
 
         // Normalize
+        float n = 0;
         for (int i = 0; i < probabilityTable.Count; i++)
         {
             var e = probabilityTable[i];
             e.probability /= probabilityOverall;
+            e.probability += n;
+            n += e.probability;
             probabilityTable[i] = e;
         }
 
