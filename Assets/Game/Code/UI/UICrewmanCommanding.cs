@@ -7,9 +7,9 @@ public class UICrewmanCommanding : SingletonBehaviour<UICrewmanCommanding>
     public LayerMask interactableMask;
     public LayerMask floorMask;
 
-    public void FixedUpdate()
+    public void Update()
     {
-        var selected = UICrewmanSelection.instance.selectedCrewman;
+        var selected = UISelection.instance.selectedCrewman;
         if (Essentials.UnityIsNull(selected))
             return;
         
@@ -20,14 +20,11 @@ public class UICrewmanCommanding : SingletonBehaviour<UICrewmanCommanding>
             RaycastHit rh;
             Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (!Input.GetKey(KeyCode.LeftShift) && Physics.Raycast(r, out rh, float.PositiveInfinity, this.interactableMask))
+            Debug.Log("Commanding! " + UISelection.instance.hoveringInteractable);
+            if (!Essentials.UnityIsNull(UISelection.instance.hoveringInteractable))
             {
-                var interactable = rh.collider.GetComponentInParent<IInteractable>();
-                if (!ReferenceEquals(interactable, null))
-                {
-                    selected.model.interact.commandInteract.TryStart(interactable);
-                    return;
-                }
+                selected.model.interact.commandInteract.TryStart(UISelection.instance.hoveringInteractable);
+                return;
             }
 
             // Floor

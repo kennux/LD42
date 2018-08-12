@@ -7,6 +7,13 @@ public class HullBreach : MonoBehaviour, IInteractable
 {
     public AudioEvent breachSound;
     public UTKAudioSource audioSource;
+    public Transform rendererTransform;
+    public OxygenDrainer oxygenDrainer;
+
+
+    public float draining = 12f;
+    public Vector3 scaleMin;
+    public Vector3 scaleMax;
 
     public HealthMechanic health
     {
@@ -73,6 +80,16 @@ public class HullBreach : MonoBehaviour, IInteractable
     {
         if (!Essentials.UnityIsNull(this.currentInteractor))
             this.health.heal.Fire(this.hps * Time.fixedDeltaTime);
+
+        float t = this.health.health.Get() / this.health.maxHealth.Get();
+        this.rendererTransform.localScale = Vector3.Lerp(this.scaleMax, this.scaleMin, t);
+        this.oxygenDrainer.drainRate = Mathf.Lerp(this.draining, 0, t);
+    }
+
+    private void OnDestroy()
+    {
+        if (!Essentials.UnityIsNull(this.currentInteractor))
+            this.currentInteractor.model.interact.interact.ForceStop();
     }
 
     private void OnFullyHealed()

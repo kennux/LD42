@@ -608,7 +608,6 @@ GameObject:
   m_Component:
   - component: {fileID: 334390683}
   - component: {fileID: 334390682}
-  - component: {fileID: 334390681}
   m_Layer: 0
   m_Name: BgCam
   m_TagString: MainCamera
@@ -616,13 +615,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &334390681
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 334390680}
-  m_Enabled: 1
 --- !u!20 &334390682
 Camera:
   m_ObjectHideFlags: 0

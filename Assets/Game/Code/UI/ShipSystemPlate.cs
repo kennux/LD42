@@ -66,7 +66,7 @@ public class ShipSystemPlate : MonoBehaviour
         // Update effciency
         this.efficiencyFillImage.fillAmount = this.tracked.lastEfficiency / this.tracked.theoreticalMaxEfficiency;
 
-        bool isEnabled = ReferenceEquals(UIShipSystemSelection.instance.selectedSystem, this.tracked);
+        bool isEnabled = ReferenceEquals(UISelection.instance.selectedSystem, this.tracked);
         this.canvasGroup.alpha = isEnabled ? 1 : 0;
         this.canvasGroup.blocksRaycasts = isEnabled;
         this.canvasGroup.interactable = isEnabled;
@@ -77,6 +77,6 @@ public class ShipSystemPlate : MonoBehaviour
 
     public void Close()
     {
-        UIShipSystemSelection.instance.Select(null);
+        UISelection.instance.SelectSystem(null);
     }
 }

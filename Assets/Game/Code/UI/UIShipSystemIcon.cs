@@ -20,6 +20,7 @@ public class UIShipSystemIcon : TrackGameObjet
     public Color mannedOutlineColor;
     public Color repairOutlineColor;
     public CanvasGroup canvasGroup;
+    public GameObject disabledVisualization;
     public float flashSpeedWhenNotFullHealthMin = 5f;
     public float flashSpeedWhenNotFullHealthMax = 15f;
 
@@ -36,6 +37,7 @@ public class UIShipSystemIcon : TrackGameObjet
 
         float h = this.system.health.health.Get() / this.system.health.maxHealth.Get();
         this.uiImage.color = Color.Lerp(this.imageTintDead, this.imageTintOk, h);
+        this.disabledVisualization.SetActive(Mathf.Approximately(this.system.health.health.Get(), 0));
 
         if (!this.system.fullHealth && !this.system.isManned)
         {

@@ -42,7 +42,7 @@ public class UserInterface : SingletonBehaviour<UserInterface>
 
     public bool hasCrewmanSelected
     {
-        get { return UICrewmanSelection.instance.hasCrewmanSelected; }
+        get { return UISelection.instance.hasCrewmanSelected; }
     }
 
     public string shipVelocity
@@ -56,7 +56,7 @@ public class UserInterface : SingletonBehaviour<UserInterface>
     {
         get
         {
-            var selected = UICrewmanSelection.instance.selectedCrewman;
+            var selected = UISelection.instance.selectedCrewman;
             if (!Essentials.UnityIsNull(selected))
             {
                 foreach (var model in this.crewmanVMs)

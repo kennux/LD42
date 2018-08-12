@@ -50,14 +50,19 @@ public class Game : SingletonBehaviour<Game>
         System.GC.Collect(); // Collect once initially
     }
 
+    public void TogglePause()
+    {
+        if (Mathf.Approximately(Time.timeScale, 0))
+            Time.timeScale = 1;
+        else
+            Time.timeScale = 0;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Mathf.Approximately(Time.timeScale, 0))
-                Time.timeScale = 1;
-            else
-                Time.timeScale = 0;
+            TogglePause();
         }
     }
 

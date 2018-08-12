@@ -64,6 +64,12 @@ public class Ship : SingletonBehaviour<Ship>
         this.velocity.value -= this.drag * Time.fixedDeltaTime;
     }
 
+    [ContextMenu("Trigger breach")]
+    private void TriggerBreach()
+    {
+        SpawnHullBreach(Vector3.zero, 1000000);
+    }
+
     /// <summary>
     /// Spawns a hull breach.
     /// </summary>
