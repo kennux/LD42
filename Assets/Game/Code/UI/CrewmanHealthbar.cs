@@ -12,6 +12,9 @@ public class CrewmanHealthbar : MonoBehaviour
     /// </summary>
     public Image fillImage;
 
+    public float pivotYZoomedIn = -6;
+    public float pivotYZoomedOut = -2;
+
     /// <summary>
     /// The crewman bound to this health bar.
     /// </summary>
@@ -49,5 +52,10 @@ public class CrewmanHealthbar : MonoBehaviour
         this.rectTransform.position = RectTransformUtility.WorldToScreenPoint(Camera.main, this.tracked.transform.position);
         // Update health
         this.fillImage.fillAmount = this.tracked.model.health.health.Get() / this.tracked.model.health.maxHealth.Get();
+
+        this.rectTransform.pivot = new Vector2(
+            this.rectTransform.pivot.x,
+            Mathf.Lerp(this.pivotYZoomedIn, this.pivotYZoomedOut, CameraController.instance.zoom01)
+            );
     }
 }

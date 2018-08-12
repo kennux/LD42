@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 668ff6c5277611447bbfb0d5deea958f
+guid: 13f2a64a3f92bd24a8f6ea812b885a6e
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -7,7 +7,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -51,7 +51,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 1
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -84,10 +84,10 @@ TextureImporter:
     buildTarget: WebGL
     maxTextureSize: 1024
     resizeAlgorithm: 0
-    textureFormat: 29
+    textureFormat: 12
     textureCompression: 1
-    compressionQuality: 100
-    crunchedCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
     androidETC2FallbackOverride: 0

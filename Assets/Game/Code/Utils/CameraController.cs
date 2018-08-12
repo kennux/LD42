@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityTK;
 
-public class CameraController : MonoBehaviour
+public class CameraController : SingletonBehaviour<CameraController>
 {
     public new Camera camera
     {
@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float orthoSize = 1f;
 
-
+    public float zoom01 { get { return this.orthoSize; } }
     public void Start()
     {
         this.min = this.transform.position + (this.transform.right * -this.minMaxPlaneSize) + (this.transform.up * this.minMaxPlaneSize);
