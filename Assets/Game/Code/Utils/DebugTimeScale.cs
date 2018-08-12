@@ -9,7 +9,7 @@ public class DebugTimeScale : MonoBehaviour
     public GameObject mouseOverDebug;
     
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         Time.timeScale = this.timeScale;
         this.mouseOverDebug = EventSystem.current.currentSelectedGameObject;
 	}

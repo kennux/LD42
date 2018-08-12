@@ -132,7 +132,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         Ship.instance.systems.Add(this);
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         UpdateRepair();
 
@@ -170,7 +170,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         // Compute workload
         float workload = this.ComputeWorkLoad(eff) * this.userLoad;
 
-        float drainTarget = this.energyDrain * Time.deltaTime * workload;
+        float drainTarget = this.energyDrain * Time.fixedDeltaTime * workload;
         return drainTarget;
     }
 
@@ -181,7 +181,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     /// <param name="energyAmount">Amount of energy available for this system.</param>
     public void ConsumeEnergy(float energyAmount)
     {
-        this.currentEnergyConsumptionPerSecond = energyAmount / Time.deltaTime;
+        this.currentEnergyConsumptionPerSecond = energyAmount / Time.fixedDeltaTime;
         float energyRequired = GetEnergyRequired();
         if (Mathf.Approximately(energyRequired, 0))
         {
@@ -198,7 +198,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     {
         if (!this.fullHealth && !Essentials.UnityIsNull(this.currentInteractor))
         {
-            this.health.heal.Fire(this.repairHealRate * Time.deltaTime);
+            this.health.heal.Fire(this.repairHealRate * Time.fixedDeltaTime);
         }
     }
 

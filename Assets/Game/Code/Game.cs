@@ -59,15 +59,18 @@ public class Game : SingletonBehaviour<Game>
             else
                 Time.timeScale = 0;
         }
+    }
 
+    private void FixedUpdate()
+    {
         this.onPreTravel?.Invoke();
 
         if (!Mathf.Approximately(Time.timeScale, 0))
-            this.playTime += Time.deltaTime / Time.timeScale;
+            this.playTime += Time.fixedDeltaTime / Time.timeScale;
 
         this.wallOfDeathVelocity = this.wallOfDeathMinVelocity + (this.wallOfDeathSpeedup.Evaluate(this.wallOfDeath / this.distanceToTravel) * (this.wallOfDeathMaxVelocity - this.wallOfDeathMinVelocity));
-        this.wallOfDeath += this.wallOfDeathVelocity * Time.deltaTime;
-        this.traveled += this.ship.velocity * Time.deltaTime;
+        this.wallOfDeath += this.wallOfDeathVelocity * Time.fixedDeltaTime;
+        this.traveled += this.ship.velocity * Time.fixedDeltaTime;
         if (this.traveled >= this.distanceToTravel)
         {
             // You made it :>

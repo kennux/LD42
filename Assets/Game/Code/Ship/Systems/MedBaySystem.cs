@@ -71,7 +71,7 @@ public class MedBaySystem : ShipSystem
 
     protected override float ComputeWorkLoad(float predictedEfficiency)
     {
-        float healAmt = this.healPerSecond * Time.deltaTime;
+        float healAmt = this.healPerSecond * Time.fixedDeltaTime;
         List<Heal> heal = ListPool<Heal>.Get();
         DistributeHeal(heal, predictedEfficiency, healAmt);
 
@@ -85,7 +85,7 @@ public class MedBaySystem : ShipSystem
 
     protected override void UpdateSystem(float currentEfficiency)
     {
-        float healAmt = this.healPerSecond * Time.deltaTime;
+        float healAmt = this.healPerSecond * Time.fixedDeltaTime;
         List<Heal> heal = ListPool<Heal>.Get();
         DistributeHeal(heal, currentEfficiency, healAmt);
 

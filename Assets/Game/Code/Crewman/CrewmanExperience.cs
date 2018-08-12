@@ -34,7 +34,7 @@ public class CrewmanExperience : BehaviourModelMechanicComponent<CrewmanExperien
         if (interactable is ShipSystem)
         {
             var ss = interactable as ShipSystem;
-            AddExperience(ss.shipSystemType, this.exGainRate * Time.deltaTime);
+            AddExperience(ss.shipSystemType, this.exGainRate * Time.fixedDeltaTime);
         }
     }
 

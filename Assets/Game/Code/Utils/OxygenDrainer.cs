@@ -12,9 +12,9 @@ public class OxygenDrainer : MonoBehaviour
     /// </summary>
     public float drainRate = 0.1f;
 
-    public void Update()
+    public void FixedUpdate()
     {
-        float dr = this.drainRate * Time.deltaTime;
+        float dr = this.drainRate * Time.fixedDeltaTime;
         float d = Game.instance.ship.oxygen.GetDrainPercentage(dr);
         Game.instance.ship.oxygen.value -= d * dr;
     }

@@ -21,7 +21,7 @@ public class Ship : SingletonBehaviour<Ship>
         this.oxygen.Init();
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         // Update systems
         List<DistributionUtil<ShipSystem>.DistributionInput> distribInput = ListPool<DistributionUtil<ShipSystem>.DistributionInput>.Get();
@@ -51,7 +51,7 @@ public class Ship : SingletonBehaviour<Ship>
         ListPool<DistributionUtil<ShipSystem>.DistributionResult>.Return(distribOutput);
 
         // Simulate drag
-        this.velocity.value -= this.drag * Time.deltaTime;
+        this.velocity.value -= this.drag * Time.fixedDeltaTime;
     }
 
     /// <summary>

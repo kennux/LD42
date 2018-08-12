@@ -7,7 +7,7 @@ public class UICrewmanCommanding : SingletonBehaviour<UICrewmanCommanding>
     public LayerMask interactableMask;
     public LayerMask floorMask;
 
-    public void Update()
+    public void FixedUpdate()
     {
         var selected = UICrewmanSelection.instance.selectedCrewman;
         if (Essentials.UnityIsNull(selected))

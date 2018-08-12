@@ -31,7 +31,7 @@ public class UIStats : MonoBehaviour
         this.t = 0;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (t > 1)
         {
@@ -56,6 +56,6 @@ public class UIStats : MonoBehaviour
             Start();
         }
         else
-            t += Time.deltaTime;
+            t += Time.fixedDeltaTime;
     }
 }

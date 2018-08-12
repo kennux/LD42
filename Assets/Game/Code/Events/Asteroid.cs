@@ -26,10 +26,10 @@ public class Asteroid : MonoBehaviour
         this.movementDir = (this.target - this.transform.position).normalized;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         var delta = (this.target - this.transform.position).normalized;
-        this.transform.position += this.movementDir * this.speed * Time.deltaTime;
+        this.transform.position += this.movementDir * this.speed * Time.fixedDeltaTime;
 
         if (Vector3.Dot(this.movementDir, delta) < 0.5f)
         {

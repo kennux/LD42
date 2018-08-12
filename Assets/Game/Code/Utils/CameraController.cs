@@ -45,11 +45,12 @@ public class CameraController : MonoBehaviour
         float vertical = -Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
 
-        this.location += new Vector2(horizontal * Time.deltaTime * this.movementSpeed, vertical * Time.deltaTime * this.movementSpeed);
+        float deltaTime = 0.016f;
+        this.location += new Vector2(horizontal * deltaTime * this.movementSpeed, vertical * deltaTime * this.movementSpeed);
         this.location.x = Mathf.Clamp01(this.location.x);
         this.location.y = Mathf.Clamp01(this.location.y);
 
-        this.orthoSize += -Input.GetAxisRaw("Mouse ScrollWheel") * this.orthoSizeScrollSpeed * Time.deltaTime;
+        this.orthoSize += -Input.GetAxisRaw("Mouse ScrollWheel") * this.orthoSizeScrollSpeed * deltaTime;
         this.orthoSize = Mathf.Clamp01(this.orthoSize);
 
         this.transform.position = this.min + (this.minXDir * this.location.x) + (this.minYDir * this.location.y);

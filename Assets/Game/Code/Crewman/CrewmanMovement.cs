@@ -46,7 +46,7 @@ public class CrewmanMovement : BehaviourModelMechanicComponent<CrewmanMovementMe
         this.isMoving = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (this.isMoving)
         {

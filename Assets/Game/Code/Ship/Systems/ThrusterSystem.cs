@@ -20,12 +20,12 @@ public class ThrusterSystem : ShipSystem
 
     protected override void UpdateSystem(float currentEfficiency)
     {
-        Ship.instance.velocity.value += this.acceleration * currentEfficiency * Time.deltaTime;
+        Ship.instance.velocity.value += this.acceleration * currentEfficiency * Time.fixedDeltaTime;
     }
 
     protected override float ComputeWorkLoad(float predictedEfficiency)
     {
-        float wouldGenerate = this.acceleration * predictedEfficiency * Time.deltaTime;
+        float wouldGenerate = this.acceleration * predictedEfficiency * Time.fixedDeltaTime;
         float willGenerate = Mathf.Min(wouldGenerate, Ship.instance.velocity.maxDelta);
 
         return willGenerate / wouldGenerate;

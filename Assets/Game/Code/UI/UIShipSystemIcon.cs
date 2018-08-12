@@ -40,7 +40,7 @@ public class UIShipSystemIcon : TrackGameObjet
         if (!this.system.fullHealth && !this.system.isManned)
         {
             float s = Mathf.Lerp(this.flashSpeedWhenNotFullHealthMin, this.flashSpeedWhenNotFullHealthMax, h);
-            this.canvasGroup.alpha = Mathf.Sin(Time.time * s) > 0 ? 1 : 0;
+            this.canvasGroup.alpha = Mathf.Sin(Time.realtimeSinceStartup * s) > 0 ? 1 : 0;
         }
         else
         {

@@ -18,12 +18,12 @@ public class EnergyGeneratorSystem : ShipSystem
 
     protected override void UpdateSystem(float currentEfficiency)
     {
-        Ship.instance.energy.value += this.generationRate * currentEfficiency * Time.deltaTime;
+        Ship.instance.energy.value += this.generationRate * currentEfficiency * Time.fixedDeltaTime;
     }
 
     protected override float ComputeWorkLoad(float predictedEfficiency)
     {
-        float wouldGenerate = this.generationRate * predictedEfficiency * Time.deltaTime;
+        float wouldGenerate = this.generationRate * predictedEfficiency * Time.fixedDeltaTime;
         float willGenerate = Mathf.Min(wouldGenerate, Ship.instance.energy.maxDelta);
 
         return willGenerate / wouldGenerate;
