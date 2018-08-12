@@ -18,7 +18,7 @@ public class Asteroid : MonoBehaviour
     public Vector3 movementDir;
     public LayerMask aoeLayerMask;
 
-    public float ripSpawnChance = .2f;
+    public float hullBreachChance = .2f;
 
     public void Initialize(GameObject target)
     {
@@ -70,10 +70,10 @@ public class Asteroid : MonoBehaviour
             health.takeDamage.Fire(dmg);
         }
 
-        // Ripping
-        if (Random.value > this.ripSpawnChance)
+        // Hull breaching
+        if (Random.value > this.hullBreachChance)
         {
-            Ship.instance.SpawnRip(this.transform.position);
+            Ship.instance.SpawnHullBreach(this.transform.position);
         }
     }
 

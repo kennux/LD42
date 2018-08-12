@@ -2460,7 +2460,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &594382418
 MonoBehaviour:
@@ -2599,7 +2599,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4828848683811032, guid: 905b4293f4acf1244bea4a75134e2168, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1458146508082170, guid: 905b4293f4acf1244bea4a75134e2168, type: 2}
       propertyPath: m_Name
@@ -5442,75 +5442,6 @@ Prefab:
     - target: {fileID: 4016551748422148, guid: 6ab9e753e02e9254281864d63dc2dcd3, type: 2}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301029248434182, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: energyDrain
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562349974959214, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: oxygen._initial
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562349974959214, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: velocity._min
-      value: -500
-      objectReference: {fileID: 0}
-    - target: {fileID: 114266029228049302, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: repairHealRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114057268085058962, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: repairHealRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114113938444160336, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: repairHealRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114078803660528828, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: repairHealRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114234866987014078, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: repairHealRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114113496632612244, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: repairHealRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114006939946818930, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: repairHealRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301029248434182, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: repairHealRate
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114301029248434182, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: healPerSecond
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114132972124982064, guid: 6ab9e753e02e9254281864d63dc2dcd3,
-        type: 2}
-      propertyPath: repairHealRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732650976820596, guid: 6ab9e753e02e9254281864d63dc2dcd3, type: 2}
-      propertyPath: m_Name
-      value: ShieldConsole
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ab9e753e02e9254281864d63dc2dcd3, type: 2}
