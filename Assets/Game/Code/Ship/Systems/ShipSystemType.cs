@@ -4,6 +4,6 @@
     COCKPIT,
     THRUSTER,
     MEDBAY,
-    LIFE_SUPPORT,
+    SHIELD,
     POWER_GENERATOR
 }

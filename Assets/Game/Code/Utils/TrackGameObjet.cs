@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityTK;
 
-[ExecuteInEditMode]
 public class TrackGameObjet : MonoBehaviour
 {
     public GameObject tracked;
@@ -17,7 +16,7 @@ public class TrackGameObjet : MonoBehaviour
     }
     private LazyLoadedComponentRef<RectTransform> _rectTransform = new LazyLoadedComponentRef<RectTransform>();
 
-    public void Update()
+    public virtual void Update()
     {
         if (Essentials.UnityIsNull(this.tracked))
             return;

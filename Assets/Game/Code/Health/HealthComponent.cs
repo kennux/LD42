@@ -18,6 +18,12 @@ public class HealthComponent : BehaviourModelMechanicComponent<HealthMechanic>
         this.mechanic.takeDamage.Fire(1);
     }
 
+    [ContextMenu("Take 50 damage")]
+    private void Take50Damage()
+    {
+        this.mechanic.takeDamage.Fire(50);
+    }
+
     [ContextMenu("Fully heal")]
     private void FullyHeal()
     {

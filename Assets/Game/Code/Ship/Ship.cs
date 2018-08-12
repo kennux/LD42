@@ -6,6 +6,7 @@ public class Ship : SingletonBehaviour<Ship>
     public MinMaxResoruce velocity;
     public MinMaxResoruce energy;
     public MinMaxResoruce oxygen;
+    public float damageMitigation;
 
     public ObservableList<ShipSystem> systems = new ObservableList<ShipSystem>(new System.Collections.Generic.List<ShipSystem>());
 

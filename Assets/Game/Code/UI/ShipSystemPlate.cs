@@ -15,6 +15,7 @@ public class ShipSystemPlate : MonoBehaviour
     public Image healthFillImage;
     public Image efficiencyFillImage;
     public Slider userWorkloadSlider;
+    public GameObject userWorkloadSliderToggle;
     public CanvasGroup canvasGroup;
 
     /// <summary>
@@ -28,8 +29,10 @@ public class ShipSystemPlate : MonoBehaviour
         }
         set
         {
+            if (!ReferenceEquals(this._tracked, value))
+                this.userWorkloadSlider.value = value.userLoad;
+
             this._tracked = value;
-            this.userWorkloadSlider.value = value.userLoad;
             Update();
         }
     }
@@ -66,12 +69,8 @@ public class ShipSystemPlate : MonoBehaviour
         this.canvasGroup.alpha = isEnabled ? 1 : 0;
         this.canvasGroup.blocksRaycasts = isEnabled;
         this.canvasGroup.interactable = isEnabled;
-        this.userWorkloadSlider.gameObject.SetActive(this.hasLoadSlider);
-    }
-
-    public void OnUserLoadChanged(float val)
-    {
-        this._tracked.userLoad = val;
+        this.tracked.userLoad = this.userWorkloadSlider.value;
+        this.userWorkloadSliderToggle.SetActive(this.hasLoadSlider);
     }
 
     public void Close()

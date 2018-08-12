@@ -8,6 +8,7 @@ public class UIStats : MonoBehaviour
     public Text velocityChangeTxt;
     public Text energyChangeTxt;
     public Text oxygenChangeTxt;
+    public Text mitigationText;
 
     private float velocity;
     private float energy;
@@ -42,6 +43,7 @@ public class UIStats : MonoBehaviour
             this.velocityChangeTxt.text = vDelta.ToString("0.00");
             this.energyChangeTxt.text = eDelta.ToString("0.00");
             this.oxygenChangeTxt.text = oDelta.ToString("0.00");
+            this.mitigationText.text = (Ship.instance.damageMitigation * 100f).ToString("0.00") + " %";
 
             this.velocityChangeTxt.color = (vDelta < 0) ? this.negativeColor : this.positiveColor;
             this.energyChangeTxt.color = (eDelta < 0) ? this.negativeColor : this.positiveColor;

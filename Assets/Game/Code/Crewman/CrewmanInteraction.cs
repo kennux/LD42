@@ -68,7 +68,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
 
     private bool CanStartCommandInteraction(IInteractable interactable)
     {
-        return true;
+        return interactable.interact.CanStart(this.crewman);
     }
 
     private bool CanStopCommandInteraction()

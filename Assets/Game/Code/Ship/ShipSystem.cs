@@ -22,7 +22,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     {
         get
         {
-            return InteractionType.MAN_STATION;
+            return this.fullHealth ? InteractionType.MAN_STATION : InteractionType.REPAIR;
         }
     }
 
@@ -51,6 +51,8 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     }
 
     protected InteractionActivity _interact = new InteractionActivity();
+
+    public bool isManned { get { return !Essentials.UnityIsNull(this.currentInteractor); } }
 
     public HealthMechanic health
     {
@@ -136,11 +138,16 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
         }
 
         if (Mathf.Approximately(this.userLoad, 0))
-            return;
-
-        UpdateEnergyDrain();
-        this._lastEfficiency = this.currentEfficiency;
-        UpdateSystem(this._lastEfficiency);
+        {
+            this._lastEfficiency = 0;
+            UpdateSystem(this._lastEfficiency);
+        }
+        else
+        {
+            UpdateEnergyDrain();
+            this._lastEfficiency = this.currentEfficiency;
+            UpdateSystem(this._lastEfficiency);
+        }
     }
 
     public void OnDestroy()
