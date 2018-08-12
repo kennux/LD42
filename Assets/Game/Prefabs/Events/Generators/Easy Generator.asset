@@ -14,10 +14,10 @@ MonoBehaviour:
   timelineLength: 1000000
   rules:
   - table: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
-    recoveryPeriodMin: 10000
-    recoveryPeriodMax: 25000
+    recoveryPeriodMin: 2500
+    recoveryPeriodMax: 5000
     minTraveled: 5000
-    maxTraveled: 1000000
+    maxTraveled: 100000
   - table: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
     recoveryPeriodMin: 40000
     recoveryPeriodMax: 50000

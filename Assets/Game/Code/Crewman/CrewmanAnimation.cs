@@ -7,6 +7,7 @@ public class CrewmanAnimation : MonoBehaviour
     public string manStationParamBoolName = "manStation";
     public string repairParamBoolName = "repair";
     public string moveParamBoolName = "move";
+    public string idleParamBoolName = "idle";
 
     public Animator animator;
 
@@ -23,6 +24,13 @@ public class CrewmanAnimation : MonoBehaviour
 
         this.crewman.model.interact.interact.onStart += OnInteractStart;
         this.crewman.model.interact.interact.onStop += OnInteractStop;
+
+        this.crewman.model.health.die.handler += OnDie;
+    }
+
+    private void OnDie()
+    {
+
     }
 
     private void OnInteractStart(IInteractable interactable)
@@ -31,12 +39,12 @@ public class CrewmanAnimation : MonoBehaviour
         {
             case InteractionType.MAN_STATION:
                 {
-                    this.animator.SetBool(this.repairParamBoolName, true);
+                    this.animator.SetBool(this.manStationParamBoolName, true);
                 }
                 break;
             case InteractionType.REPAIR:
                 {
-                    this.animator.SetBool(this.manStationParamBoolName, true);
+                    this.animator.SetBool(this.repairParamBoolName, true);
                 }
                 break;
         }
@@ -56,5 +64,15 @@ public class CrewmanAnimation : MonoBehaviour
     private void OnMoveStop()
     {
         this.animator.SetBool(this.moveParamBoolName, false);
+    }
+
+    private void Update()
+    {
+        bool b1 = this.animator.GetBool(this.manStationParamBoolName);
+        bool b2 = this.animator.GetBool(this.repairParamBoolName);
+        bool b3 = this.animator.GetBool(this.moveParamBoolName);
+
+        // Lul :D
+        this.animator.SetBool(this.idleParamBoolName, !b1 && !b2 && !b3);
     }
 }

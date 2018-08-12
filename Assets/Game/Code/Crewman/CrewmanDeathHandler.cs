@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 public class CrewmanDeathHandler : BehaviourModelMechanicComponent<HealthMechanic>
 {
+    public GameObject deadPrefab;
+    public float destroyDeadAfter = 2f;
+
     protected override void BindHandlers()
     {
         this.mechanic.die.handler += OnDie;
@@ -14,7 +17,9 @@ public class CrewmanDeathHandler : BehaviourModelMechanicComponent<HealthMechani
 
     private void OnDie()
     {
-        // TODO: Animation
+        var deadGo = Instantiate(deadPrefab, this.transform.position, this.transform.rotation);
+
         Destroy(this.gameObject);
+        Destroy(deadGo, this.destroyDeadAfter);
     }
 }

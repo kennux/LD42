@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743f5e7f11d8e47429384cb3d5e9c737, type: 3}
+  m_Name: BoneCrunchAudioEvent
+  m_EditorClassIdentifier: 
+  identifier: BoneCrunchAudioEvent
+  tags: []
+  volume:
+    minValue: 0.8014364
+    maxValue: 0.9493029
+  pitch:
+    minValue: 1.3802282
+    maxValue: 1.6337136
+  clip: {fileID: 8300000, guid: bb16314e885ba584886c1f3a1fffdea0, type: 3}
+  minDistance: 0
+  maxDistance: 100
+  rolloffMode: 0
