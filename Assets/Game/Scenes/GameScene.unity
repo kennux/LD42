@@ -2726,6 +2726,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.4
   repairHealRate: 4
+  baseMannedAdd01: 0.2
   userLoad: 0.1
   expCurve:
     serializedVersion: 2
@@ -2763,7 +2764,7 @@ MonoBehaviour:
   _lastEfficiency: 0
   currentEnergyConsumptionPerSecond: 0
   isCockpit: 0
-  acceleration: 0.75
+  acceleration: 0.78
 --- !u!114 &510133426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3507,7 +3508,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ed375252bf6544e4cbd582b79f1f246c, type: 2}
   - {fileID: 11400000, guid: a3a365f3d943c934f9719fecb6de469f, type: 2}
   timelines:
-  - {fileID: 11400000, guid: 94a7db63a65aca44c84727da9316655d, type: 2}
+  - {fileID: 11400000, guid: cee1eff7cb4115e448931996efb5487f, type: 2}
   timeline: {fileID: 0}
   startDist: 0
 --- !u!1 &608048341
@@ -4146,6 +4147,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.4
   repairHealRate: 4
+  baseMannedAdd01: 0.2
   userLoad: 0.1
   expCurve:
     serializedVersion: 2
@@ -4183,7 +4185,7 @@ MonoBehaviour:
   _lastEfficiency: 0
   currentEnergyConsumptionPerSecond: 0
   isCockpit: 0
-  acceleration: 0.75
+  acceleration: 0.78
 --- !u!114 &720545133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6367,6 +6369,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 4
   repairHealRate: 4
+  baseMannedAdd01: 0.5
   userLoad: 1
   expCurve:
     serializedVersion: 2
@@ -7647,6 +7650,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.5
   repairHealRate: 4
+  baseMannedAdd01: 0.2
   userLoad: 1
   expCurve:
     serializedVersion: 2
@@ -7941,12 +7945,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionAnchor: {fileID: 842216510}
-  energyDrain: 10
+  energyDrain: 9
   efficiencyDestroyed: 0
   efficiencyNormal: 1
   efficiencyMannedAdd: 1
   repairHealRate: 2
-  userLoad: 0
+  baseMannedAdd01: 0.5
+  userLoad: 0.3
   expCurve:
     serializedVersion: 2
     m_Curve:
@@ -8637,6 +8642,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.4
   repairHealRate: 4
+  baseMannedAdd01: 0.2
   userLoad: 0.1
   expCurve:
     serializedVersion: 2
@@ -8674,7 +8680,7 @@ MonoBehaviour:
   _lastEfficiency: 0
   currentEnergyConsumptionPerSecond: 0
   isCockpit: 0
-  acceleration: 0.75
+  acceleration: 0.78
 --- !u!114 &1605563516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8930,6 +8936,109 @@ Transform:
   m_Father: {fileID: 826693450}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1659869746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659869747}
+  - component: {fileID: 1659869751}
+  - component: {fileID: 1659869750}
+  - component: {fileID: 1659869749}
+  - component: {fileID: 1659869748}
+  m_Layer: 0
+  m_Name: Shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1659869747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659869746}
+  m_LocalRotation: {x: -0.00000008146034, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.31620726, z: -7.379698}
+  m_LocalScale: {x: 20, y: 10, z: 25}
+  m_Children: []
+  m_Father: {fileID: 1866937699}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1659869748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659869746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594ae99bf62373245a49d4d700afc30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invisibleColor: {r: 0, g: 0.67058825, b: 1, a: 0}
+  mitigateColor: {r: 0, g: 0.67058825, b: 1, a: 0.6509804}
+  animationSpeed: 1
+  t: 0
+  mat: {fileID: 2100000, guid: 7815fafad6a0b3d45917c5de62685d34, type: 2}
+  renderer: {fileID: 1659869750}
+--- !u!135 &1659869749
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659869746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1659869750
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659869746}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 7815fafad6a0b3d45917c5de62685d34, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1659869751
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659869746}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1660369532
 GameObject:
   m_ObjectHideFlags: 0
@@ -9118,6 +9227,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.5
   repairHealRate: 4
+  baseMannedAdd01: 0.5
   userLoad: 1
   expCurve:
     serializedVersion: 2
@@ -10532,6 +10642,7 @@ Transform:
   - {fileID: 1864127346}
   - {fileID: 445307906}
   - {fileID: 881170404}
+  - {fileID: 1659869747}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10639,6 +10750,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 4
   repairHealRate: 4
+  baseMannedAdd01: 0.5
   userLoad: 1
   expCurve:
     serializedVersion: 2
@@ -12078,6 +12190,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.4
   repairHealRate: 4
+  baseMannedAdd01: 0.2
   userLoad: 0.1
   expCurve:
     serializedVersion: 2
@@ -12115,7 +12228,7 @@ MonoBehaviour:
   _lastEfficiency: 0
   currentEnergyConsumptionPerSecond: 0
   isCockpit: 0
-  acceleration: 0.75
+  acceleration: 0.78
 --- !u!114 &2058744491
 MonoBehaviour:
   m_ObjectHideFlags: 0

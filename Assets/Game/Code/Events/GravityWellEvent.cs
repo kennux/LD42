@@ -11,6 +11,7 @@ public class GravityWellEvent : GameEvent
     public override void Execute()
     {
         Ship.instance.velocity.value -= this.velocityRemove * (1f - Ship.instance.damageMitigation);
+        ShieldAnimation.instance.Mitigate();
         AudioOneShotPlayer.instance.PlayNonSpatial(this.nonSpatialAudio);
     }
 

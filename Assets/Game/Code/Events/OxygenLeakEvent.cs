@@ -11,6 +11,7 @@ public class OxygenLeakEvent : GameEvent
     public override void Execute()
     {
         Ship.instance.oxygen.value -= Ship.instance.oxygen.max * this.oxygenPercentageLeaked * (1f - Ship.instance.damageMitigation);
+        ShieldAnimation.instance.Mitigate();
         AudioOneShotPlayer.instance.PlayNonSpatial(this.nonSpatialAudio);
     }
 

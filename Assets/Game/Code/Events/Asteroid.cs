@@ -72,6 +72,7 @@ public class Asteroid : MonoBehaviour
 
             float dist = (hit.ClosestPoint(this.transform.position) - this.transform.position).magnitude;
             float dmg = this.damageFalloff.Evaluate(dist / this.aoeRadius) * this.damage * (1f - Ship.instance.damageMitigation);
+            ShieldAnimation.instance.Mitigate();
             health.takeDamage.Fire(dmg);
         }
 

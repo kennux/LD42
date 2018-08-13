@@ -11,6 +11,7 @@ public class RandomSystemFailureEvent : GameEvent
     {
         var system = Ship.instance.systems[Random.Range(0, Ship.instance.systems.Count)];
         system.health.takeDamage.Fire(system.health.maxHealth.Get() * (1f - Ship.instance.damageMitigation));
+        ShieldAnimation.instance.Mitigate();
         Debug.Log("Ship system " + system + " was affected by random system failure event!");
     }
 

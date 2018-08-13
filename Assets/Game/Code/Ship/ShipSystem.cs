@@ -75,6 +75,8 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
     /// </summary>
     public float repairHealRate = 1f;
 
+    public float baseMannedAdd01 = 0.5f;
+
     /// <summary>
     /// Computes current efficiency.
     /// </summary>
@@ -86,7 +88,7 @@ public abstract class ShipSystem : MonoBehaviour, IInteractable
             float eff = Mathf.Lerp(this.efficiencyDestroyed, this.efficiencyNormal, health01);
 
             if (this.fullHealth && !Essentials.UnityIsNull(this.currentInteractor))
-                eff += this.expCurve.Evaluate(this.currentInteractor.model.exp.getExperienceMultiplicator.Invoke(this.shipSystemType)) * this.efficiencyMannedAdd;
+                eff += (this.efficiencyMannedAdd * this.baseMannedAdd01) + (this.expCurve.Evaluate(this.currentInteractor.model.exp.getExperienceMultiplicator.Invoke(this.shipSystemType)) * ((1f - this.baseMannedAdd01) * this.efficiencyMannedAdd));
 
             return eff * this.userLoad * this.currentFrameEnergyModifier;
         }

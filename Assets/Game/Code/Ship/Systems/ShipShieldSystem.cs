@@ -10,7 +10,7 @@ public class ShipShieldSystem : ShipSystem
             return ShipSystemType.SHIELD;
         }
     }
-    
+
     public float damageMitigation;
 
     protected override float ComputeWorkLoad(float predictedEfficiency)

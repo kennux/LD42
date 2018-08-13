@@ -14,4 +14,4 @@ MonoBehaviour:
   identifier: Random System Failure Event
   tags: []
   uiText: Critical system failure!
-  nonSpatialAudio: {fileID: 0}
+  nonSpatialAudio: {fileID: 11400000, guid: 8a3f5068aa160be44aba73b6608b105f, type: 2}

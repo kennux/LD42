@@ -15,22 +15,22 @@ MonoBehaviour:
   rules:
   - table: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
     recoveryPeriodMin: 2000
-    recoveryPeriodMax: 4000
+    recoveryPeriodMax: 3500
     minTraveled: 4000
     maxTraveled: 1000000
   - table: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
-    recoveryPeriodMin: 30000
-    recoveryPeriodMax: 40000
+    recoveryPeriodMin: 27000
+    recoveryPeriodMax: 37000
     minTraveled: 50000
     maxTraveled: 1000000
   - table: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
-    recoveryPeriodMin: 40000
-    recoveryPeriodMax: 60000
+    recoveryPeriodMin: 37000
+    recoveryPeriodMax: 55000
     minTraveled: 200000
     maxTraveled: 1000000
   - table: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
-    recoveryPeriodMin: 60000
-    recoveryPeriodMax: 80000
+    recoveryPeriodMin: 55000
+    recoveryPeriodMax: 70000
     minTraveled: 500000
     maxTraveled: 1000000
   targets:

@@ -14,23 +14,23 @@ MonoBehaviour:
   timelineLength: 1000000
   rules:
   - table: {fileID: 11400000, guid: 9df663ca66f2cf643993445591b4c9a0, type: 2}
-    recoveryPeriodMin: 2500
-    recoveryPeriodMax: 5000
+    recoveryPeriodMin: 2250
+    recoveryPeriodMax: 4000
     minTraveled: 5000
     maxTraveled: 1000000
   - table: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
-    recoveryPeriodMin: 40000
-    recoveryPeriodMax: 50000
+    recoveryPeriodMin: 37000
+    recoveryPeriodMax: 46000
     minTraveled: 100000
     maxTraveled: 1000000
   - table: {fileID: 11400000, guid: 120816a5b233876489ccac8771f8d224, type: 2}
-    recoveryPeriodMin: 50000
-    recoveryPeriodMax: 75000
+    recoveryPeriodMin: 470000
+    recoveryPeriodMax: 70000
     minTraveled: 300000
     maxTraveled: 1000000
   - table: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
-    recoveryPeriodMin: 750000
-    recoveryPeriodMax: 100000
+    recoveryPeriodMin: 700000
+    recoveryPeriodMax: 950000
     minTraveled: 700000
     maxTraveled: 1000000
   targets:
