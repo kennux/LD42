@@ -36,11 +36,6 @@ public class Game : SingletonBehaviour<Game>
     public float distanceToTravel = 1000000;
     public Ship ship;
 
-    private AnimationCurve edgeOfSpaceSpeedup;
-    private float edgeOfSpaceMaxVelocity;
-    private float edgeOfSpaceMinVelocity;
-    private float edgeOfSpaceDistanceMaxVelocity;
-
     public GameObject uiGameOverFail;
     public GameObject uiGameOverSuccess;
     public GameDifficulty nullDifficulty = GameDifficulty.MEDIUM;
@@ -55,7 +50,17 @@ public class Game : SingletonBehaviour<Game>
         get { return Mathf.Approximately(Time.timeScale, 0); }
     }
     private float _timeScale = 1;
-    
+
+    [Header("Debug (EoS)")]
+    [SerializeField]
+    private AnimationCurve edgeOfSpaceSpeedup;
+    [SerializeField]
+    private float edgeOfSpaceMaxVelocity;
+    [SerializeField]
+    private float edgeOfSpaceMinVelocity;
+    [SerializeField]
+    private float edgeOfSpaceDistanceMaxVelocity;
+
     public ObservableList<Crewman> crewmen = new ObservableList<Crewman>(new List<Crewman>());
 
     public override void Awake()
@@ -150,5 +155,6 @@ public class Game : SingletonBehaviour<Game>
     {
         (success ? this.uiGameOverSuccess : this.uiGameOverFail).SetActive(true);
         this.enabled = false;
+        Ship.instance.enabled = false;
     }
 }

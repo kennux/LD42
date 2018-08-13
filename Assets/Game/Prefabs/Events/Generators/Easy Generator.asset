@@ -17,7 +17,7 @@ MonoBehaviour:
     recoveryPeriodMin: 2500
     recoveryPeriodMax: 5000
     minTraveled: 5000
-    maxTraveled: 100000
+    maxTraveled: 1000000
   - table: {fileID: 11400000, guid: 1ab5740f6fc43ae4682ecb63d1814d9c, type: 2}
     recoveryPeriodMin: 40000
     recoveryPeriodMax: 50000
@@ -37,3 +37,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 536bf1bebf892eb4f946afca3fbbdaeb, type: 2}
   - {fileID: 11400000, guid: 0714d06bf3e481f4aa1793161c73e2bb, type: 2}
   - {fileID: 11400000, guid: 6a7caa287e793e8489a4a97a31b3620f, type: 2}
+  - {fileID: 11400000, guid: 96d7ed93949d2304ebc2437c3e6b5fc3, type: 2}
+  - {fileID: 11400000, guid: 1e9f6d2f367cdfb4089635c185da15a5, type: 2}

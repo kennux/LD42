@@ -29,11 +29,13 @@ MonoBehaviour:
     minTraveled: 150000
     maxTraveled: 1000000
   - table: {fileID: 11400000, guid: 40bc6012f14dc99489f7754e4dc6369c, type: 2}
-    recoveryPeriodMin: 50000
-    recoveryPeriodMax: 100000
+    recoveryPeriodMin: 40000
+    recoveryPeriodMax: 60000
     minTraveled: 350000
     maxTraveled: 1000000
   targets:
   - {fileID: 11400000, guid: bdb7f802fbd7e08458709c4e23c0b121, type: 2}
   - {fileID: 11400000, guid: c26dccb0f11c94847ae6d8eddf2c1ae6, type: 2}
   - {fileID: 11400000, guid: 8e6453e7f7e6f524a9324f252a65e740, type: 2}
+  - {fileID: 11400000, guid: a3a365f3d943c934f9719fecb6de469f, type: 2}
+  - {fileID: 11400000, guid: ed375252bf6544e4cbd582b79f1f246c, type: 2}

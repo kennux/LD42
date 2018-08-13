@@ -46,8 +46,8 @@ public class EventSpawnTable : ScriptableObject
         {
             var e = probabilityTable[i];
             e.probability /= probabilityOverall;
-            e.probability += n;
             n += e.probability;
+            e.probability += n;
             probabilityTable[i] = e;
         }
 
@@ -73,8 +73,8 @@ public class EventSpawnTable : ScriptableObject
             else
             {
                 // Middle element
-                startProbability = probabilityTable[i].probability;
-                endProbability = probabilityTable[i+1].probability;
+                startProbability = probabilityTable[i-1].probability;
+                endProbability = probabilityTable[i].probability;
             }
 
             if (rnd >= startProbability && rnd <= endProbability)
@@ -83,7 +83,34 @@ public class EventSpawnTable : ScriptableObject
 
 
         // Wtf?!
-        Debug.LogError("Event selection algorithm couldnt select an event!?");
+        Debug.LogError("Event selection algorithm couldnt select an event on table " + this);
+        for (int i = 0; i < probabilityTable.Count; i++)
+        {
+            var e = probabilityTable[i];
+
+            float startProbability = 0, endProbability = 0;
+            if (i == 0)
+            {
+                // First element!
+                startProbability = 0;
+                endProbability = probabilityTable[i].probability;
+            }
+            else if (i == probabilityTable.Count - 1)
+            {
+                // Last element
+                startProbability = probabilityTable[i].probability;
+                endProbability = 1;
+            }
+            else
+            {
+                // Middle element
+                startProbability = probabilityTable[i - 1].probability;
+                endProbability = probabilityTable[i].probability;
+            }
+
+            if (rnd >= startProbability && rnd <= endProbability)
+                return e.evt;
+        }
         return null;
     }
 }
