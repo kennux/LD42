@@ -47,7 +47,7 @@ public class UserInterface : SingletonBehaviour<UserInterface>
 
     public string shipVelocity
     {
-        get { return "Ship Velocty: " + Ship.instance.velocity.value.ToString("0.00") + "  <color=\"black\">Edge of Space Velocity: " + Game.instance.wallOfDeathVelocity.ToString("0.00") + "</color>"; }
+        get { return "Ship Velocity: " + Ship.instance.velocity.value.ToString("0.00") + "  <color=\"black\">Edge of Space Velocity: " + Game.instance.wallOfDeathVelocity.ToString("0.00") + "</color>"; }
     }
 
     public bool isPaused { get { return Game.instance.isPaused; } }
