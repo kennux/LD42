@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oxygenLevelDamageThreshold: 0.25
   oxygenDamageMin: 0.1
-  oxygenDamageMax: 3
+  oxygenDamageMax: 6
 --- !u!114 &114181244707899172
 MonoBehaviour:
   m_ObjectHideFlags: 1

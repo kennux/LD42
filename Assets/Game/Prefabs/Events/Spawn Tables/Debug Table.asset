@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 626ac90e5255b8d4dad93fc2949eed5a, type: 3}
-  m_Name: Debug Timeline
+  m_Script: {fileID: 11500000, guid: b7c26405cf6305146ae72286d789a1ae, type: 3}
+  m_Name: Debug Table
   m_EditorClassIdentifier: 
   entries:
-  - traveledDistance: 250
-    spawnTable: {fileID: 11400000, guid: 2519d7a068540ab4e95bdd1e622c7807, type: 2}
+  - evt: {fileID: 11400000, guid: c3d829b845d92f647be678b835341ad2, type: 2}
+    probability: 1
