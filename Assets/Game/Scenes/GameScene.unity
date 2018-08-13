@@ -3334,46 +3334,123 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ce6095b2d17c74abe1c9bdf7a5811b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulties:
+  - difficulty: 0
+    speedup:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2.0418067
+        outSlope: 2.0418067
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.42394295
+        value: 0.8656096
+        inSlope: 0.21347025
+        outSlope: 0.21347025
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.15567155
+        outWeight: 0.104031265
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.23329358
+        outSlope: 0.23329358
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    maxVelocity: 1500
+    minVelocity: 50
+    distanceMaxVelocity: 350000
+  - difficulty: 1
+    speedup:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2797262
+        value: 0.83683616
+        inSlope: 0.5710085
+        outSlope: 0.5710085
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.26934135
+        outWeight: 0.103270695
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    maxVelocity: 1800
+    minVelocity: 50
+    distanceMaxVelocity: 300000
+  - difficulty: 2
+    speedup:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.1514599
+        value: 0.9165496
+        inSlope: 0.27067587
+        outSlope: 0.27067587
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.26934135
+        outWeight: 0.06328483
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    maxVelocity: 1900
+    minVelocity: 50
+    distanceMaxVelocity: 200000
   distanceToTravel: 1000000
   ship: {fileID: 15208690}
-  wallOfDeathSpeedup:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.42955318
-      value: 0.88633037
-      inSlope: 0.6026231
-      outSlope: 0.6026231
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.10675632
-      outWeight: 0.093953505
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  wallOfDeathMaxVelocity: 1800
-  wallOfDeathMinVelocity: 50
-  wallOfDeathDistanceMaxVelocity: 400000
   uiGameOverFail: {fileID: 592946920}
   uiGameOverSuccess: {fileID: 1649941181}
+  nullDifficulty: 1
   traveled: 0
   wallOfDeath: 0
   wallOfDeathVelocity: 100
@@ -6273,7 +6350,7 @@ MonoBehaviour:
   energyDrain: 5
   efficiencyDestroyed: 0
   efficiencyNormal: 1
-  efficiencyMannedAdd: 2.5
+  efficiencyMannedAdd: 4
   repairHealRate: 4
   userLoad: 1
   expCurve:
@@ -6311,7 +6388,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _lastEfficiency: 0
   currentEnergyConsumptionPerSecond: 0
-  generationRate: 1.5
+  generationRate: 1.6
 --- !u!114 &1196492171
 MonoBehaviour:
   m_ObjectHideFlags: 0

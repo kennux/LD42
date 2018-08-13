@@ -21,6 +21,9 @@ public class EventSpawnTable : ScriptableObject
 
     private GameEvent SelectEvent(EventSpawn[] events)
     {
+        if (events.Length == 1)
+            return events[0].evt;
+
         // Build probability table
         List<EventSpawn> probabilityTable = ListPool<EventSpawn>.Get();
         float probabilityOverall = 0;

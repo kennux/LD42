@@ -20,17 +20,30 @@ public class Game : SingletonBehaviour<Game>
         get { return (float)(this.wallOfDeath / this.distanceToTravel); }
     }
 
+    [System.Serializable]
+    public struct EdgeOfSpaceDifficultySetting
+    {
+        public GameDifficulty difficulty;
+        public AnimationCurve speedup;
+
+        public float maxVelocity;
+        public float minVelocity;
+        public float distanceMaxVelocity;
+    }
+
     [Header("Game Settings")]
+    public EdgeOfSpaceDifficultySetting[] difficulties;
     public float distanceToTravel = 1000000;
     public Ship ship;
-    public AnimationCurve wallOfDeathSpeedup;
 
-    public float wallOfDeathMaxVelocity;
-    public float wallOfDeathMinVelocity;
-    public float wallOfDeathDistanceMaxVelocity;
+    private AnimationCurve edgeOfSpaceSpeedup;
+    private float edgeOfSpaceMaxVelocity;
+    private float edgeOfSpaceMinVelocity;
+    private float edgeOfSpaceDistanceMaxVelocity;
 
     public GameObject uiGameOverFail;
     public GameObject uiGameOverSuccess;
+    public GameDifficulty nullDifficulty = GameDifficulty.MEDIUM;
 
     [Header("Debug")]
     public float traveled = 0;
@@ -48,6 +61,23 @@ public class Game : SingletonBehaviour<Game>
     public override void Awake()
     {
         base.Awake();
+
+        var difficulty = MainMenu.difficulty;
+        if (difficulty == GameDifficulty.NULL)
+            difficulty = nullDifficulty;
+
+        foreach (var diff in this.difficulties)
+        {
+            if (diff.difficulty == difficulty)
+            {
+                // Apply
+                this.edgeOfSpaceSpeedup = diff.speedup;
+                this.edgeOfSpaceMinVelocity = diff.minVelocity;
+                this.edgeOfSpaceMaxVelocity = diff.maxVelocity;
+                this.edgeOfSpaceDistanceMaxVelocity = diff.distanceMaxVelocity;
+            }
+        }
+
         System.GC.Collect(); // Collect once initially
     }
 
@@ -92,7 +122,7 @@ public class Game : SingletonBehaviour<Game>
         if (!Mathf.Approximately(Time.timeScale, 0))
             this.playTime += Time.fixedDeltaTime / Time.timeScale;
 
-        this.wallOfDeathVelocity = this.wallOfDeathMinVelocity + (this.wallOfDeathSpeedup.Evaluate(this.wallOfDeath / this.distanceToTravel) * (this.wallOfDeathMaxVelocity - this.wallOfDeathMinVelocity));
+        this.wallOfDeathVelocity = this.edgeOfSpaceMinVelocity + (this.edgeOfSpaceSpeedup.Evaluate(this.wallOfDeath / this.distanceToTravel) * (this.edgeOfSpaceMaxVelocity - this.edgeOfSpaceMinVelocity));
         this.wallOfDeath += this.wallOfDeathVelocity * Time.fixedDeltaTime;
         this.traveled += this.ship.velocity * Time.fixedDeltaTime;
         if (this.traveled >= this.distanceToTravel)
