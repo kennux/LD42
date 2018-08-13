@@ -21,6 +21,12 @@ public class CrewmanMovement : BehaviourModelMechanicComponent<CrewmanMovementMe
         this.mechanic.move.RegisterStopCondition(CanStopMove);
         this.mechanic.move.onStart += OnMoveStart;
         this.mechanic.move.onStop += OnMoveStop;
+        this.mechanic.move.RegisterActivityGetter(IsMoving);
+    }
+
+    private bool IsMoving()
+    {
+        return this.isMoving;
     }
 
     private bool CanStartMove(MovementParameters point)
@@ -38,12 +44,14 @@ public class CrewmanMovement : BehaviourModelMechanicComponent<CrewmanMovementMe
         this.isMoving = true;
         this.lookRotation = point.lookRotation;
         this.agent.updateRotation = true;
+        this.agent.isStopped = false;
         this.agent.SetDestination(point.position);
     }
 
     private void OnMoveStop()
     {
         this.isMoving = false;
+        this.agent.isStopped = true;
     }
 
     private void FixedUpdate()

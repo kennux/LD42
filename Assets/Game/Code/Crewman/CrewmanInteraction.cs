@@ -29,6 +29,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
         this.mechanic.commandInteract.RegisterStopCondition(CanStopCommandInteraction);
         this.mechanic.commandInteract.onStart += OnStartCommandInteraction;
         this.mechanic.commandInteract.onStop += OnStopCommandInteraction;
+        this.mechanic.commandInteract.RegisterActivityGetter(IsCommandInteractionActive);
 
         this.movement.move.onStart += OnMoveStart;
         this.movement.move.onStop += OnMoveStop;
@@ -44,6 +45,11 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
 
     private bool justIssuedMovement;
     private IInteractable commandedInteractable;
+
+    private bool IsCommandInteractionActive()
+    {
+        return !Essentials.UnityIsNull(this.commandedInteractable);
+    }
 
     private void OnMoveStart(MovementParameters p)
     {
@@ -109,6 +115,7 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
     {
         Debug.Log("Stopped commanded interacting with " + commandedInteractable);
         this.commandedInteractable = null;
+        this.justIssuedMovement = false;
         this.mechanic.interact.ForceStop();
     }
 
@@ -131,6 +138,13 @@ public class CrewmanInteraction : BehaviourModelMechanicComponent<CrewmanInterac
     private void OnStartInteracting(IInteractable interactable)
     {
         Debug.Log("Started interacting with " + interactable);
+
+        if (this.mechanic.commandInteract.IsActive())
+            this.mechanic.commandInteract.ForceStop();
+
+        if (this.movement.move.IsActive())
+            this.movement.move.ForceStop();
+
         this.currentInteractable = interactable;
         this.currentInteractable.interact.ForceStart(this.crewman);
     }

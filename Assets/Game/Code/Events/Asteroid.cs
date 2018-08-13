@@ -19,15 +19,20 @@ public class Asteroid : MonoBehaviour
     public LayerMask aoeLayerMask;
 
     public float hullBreachChance = .2f;
+    private float moveTime;
 
-    public void Initialize(GameObject target)
+    public void Initialize(GameObject target, float startMovingAfter)
     {
         this.target = target.transform.position;
         this.movementDir = (this.target - this.transform.position).normalized;
+        this.moveTime = Time.time + startMovingAfter;
     }
 
     public void FixedUpdate()
     {
+        if (this.moveTime > Time.time)
+            return;
+
         var delta = (this.target - this.transform.position).normalized;
         this.transform.position += this.movementDir * this.speed * Time.fixedDeltaTime;
 

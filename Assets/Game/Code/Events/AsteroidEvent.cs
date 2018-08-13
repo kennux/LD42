@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class AsteroidEvent : GameEvent
 {
     public int asteroidsToFire;
+    public float interval = 1.5f;
     public Asteroid prefab;
     
     public override void Execute()
@@ -16,13 +17,15 @@ public class AsteroidEvent : GameEvent
         var systems = Ship.instance.systems;
         while (targets.Count < this.asteroidsToFire)
             targets.Add(systems[Random.Range(0, systems.Count)]);
-        
+
         // Fire asteroids
+        float t = 0;
         foreach (var target in targets)
         {
             var asteroidGo = Instantiate(this.prefab.gameObject);
             var asteroid = asteroidGo.GetComponent<Asteroid>();
-            asteroid.Initialize(target.gameObject);
+            asteroid.Initialize(target.gameObject, t);
+            t += this.interval;
         }
 
         HashSetPool<ShipSystem>.Return(targets);

@@ -1107,9 +1107,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -540, y: 100}
-  m_SizeDelta: {x: -1080, y: -200}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 122.5, y: 100}
+  m_SizeDelta: {x: 245, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &239916996
 MonoBehaviour:
@@ -3386,8 +3386,8 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.2797262
-        value: 0.83683616
+        time: 0.29495448
+        value: 0.8223403
         inSlope: 0.5710085
         outSlope: 0.5710085
         tangentMode: 0
@@ -3406,7 +3406,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    maxVelocity: 1800
+    maxVelocity: 1700
     minVelocity: 50
     distanceMaxVelocity: 300000
   - difficulty: 2
@@ -3423,14 +3423,14 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.24711207
-        value: 0.81872356
-        inSlope: 0.76599383
-        outSlope: 0.76599383
+        time: 0.2862542
+        value: 0.87669754
+        inSlope: 0.49078184
+        outSlope: 0.49078184
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.26934135
-        outWeight: 0.0593441
+        inWeight: 0.15927866
+        outWeight: 0.07033388
       - serializedVersion: 3
         time: 1
         value: 1
@@ -3443,9 +3443,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    maxVelocity: 1900
+    maxVelocity: 1800
     minVelocity: 50
-    distanceMaxVelocity: 200000
+    distanceMaxVelocity: 270000
   distanceToTravel: 1000000
   ship: {fileID: 15208690}
   uiGameOverFail: {fileID: 592946920}
@@ -3507,7 +3507,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ed375252bf6544e4cbd582b79f1f246c, type: 2}
   - {fileID: 11400000, guid: a3a365f3d943c934f9719fecb6de469f, type: 2}
   timelines:
-  - {fileID: 11400000, guid: c26dccb0f11c94847ae6d8eddf2c1ae6, type: 2}
+  - {fileID: 11400000, guid: 94a7db63a65aca44c84727da9316655d, type: 2}
   timeline: {fileID: 0}
   startDist: 0
 --- !u!1 &608048341
@@ -5015,7 +5015,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1280, y: 720}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -5541,7 +5541,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1280, y: 720}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -7941,7 +7941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionAnchor: {fileID: 842216510}
-  energyDrain: 20
+  energyDrain: 10
   efficiencyDestroyed: 0
   efficiencyNormal: 1
   efficiencyMannedAdd: 1
@@ -10204,7 +10204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -114.79004, y: 25}
+  m_AnchoredPosition: {x: -114.78906, y: 25}
   m_SizeDelta: {x: 129.58, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1826356823
@@ -10448,11 +10448,11 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

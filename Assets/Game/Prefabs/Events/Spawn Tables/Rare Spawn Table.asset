@@ -17,4 +17,4 @@ MonoBehaviour:
   - evt: {fileID: 11400000, guid: 5af5df55dd44099428992eaa5a52ea82, type: 2}
     probability: 1
   - evt: {fileID: 11400000, guid: e53a6bc626217b54bb6eb7abba179c6a, type: 2}
-    probability: 0.5
+    probability: 0.2
