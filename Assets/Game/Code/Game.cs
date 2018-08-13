@@ -41,6 +41,7 @@ public class Game : SingletonBehaviour<Game>
     {
         get { return Mathf.Approximately(Time.timeScale, 0); }
     }
+    private float _timeScale = 1;
     
     public ObservableList<Crewman> crewmen = new ObservableList<Crewman>(new List<Crewman>());
 
@@ -53,7 +54,7 @@ public class Game : SingletonBehaviour<Game>
     public void TogglePause()
     {
         if (Mathf.Approximately(Time.timeScale, 0))
-            Time.timeScale = 1;
+            Time.timeScale = this._timeScale;
         else
             Time.timeScale = 0;
     }
@@ -64,6 +65,24 @@ public class Game : SingletonBehaviour<Game>
         {
             TogglePause();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            this._timeScale = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            this._timeScale = 3;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            this._timeScale = 5;
+        }
+
+        if (!this.isPaused)
+            Time.timeScale = this._timeScale;
     }
 
     private void FixedUpdate()

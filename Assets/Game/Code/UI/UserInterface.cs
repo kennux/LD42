@@ -50,6 +50,20 @@ public class UserInterface : SingletonBehaviour<UserInterface>
         get { return "Ship Velocity: " + Ship.instance.velocity.value.ToString("0.00") + "  <color=\"black\">Edge of Space Velocity: " + Game.instance.wallOfDeathVelocity.ToString("0.00") + "</color>"; }
     }
 
+    public string speed
+    {
+        get
+        {
+            string s = "";
+            for (int i = 0; i < Time.timeScale; i++)
+            {
+                s += ">";
+            }
+
+            return s;
+        }
+    }
+
     public bool isPaused { get { return Game.instance.isPaused; } }
 
     public CrewmanViewModel selectedCrewmanVM

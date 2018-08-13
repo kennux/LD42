@@ -3349,6 +3349,15 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 0.42955318
+      value: 0.88633037
+      inSlope: 0.6026231
+      outSlope: 0.6026231
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10675632
+      outWeight: 0.093953505
+    - serializedVersion: 3
       time: 1
       value: 1
       inSlope: 0
@@ -3360,7 +3369,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  wallOfDeathMaxVelocity: 1500
+  wallOfDeathMaxVelocity: 1800
   wallOfDeathMinVelocity: 50
   wallOfDeathDistanceMaxVelocity: 400000
   uiGameOverFail: {fileID: 592946920}
@@ -3406,7 +3415,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c26dccb0f11c94847ae6d8eddf2c1ae6, type: 2}
   - {fileID: 11400000, guid: c26dccb0f11c94847ae6d8eddf2c1ae6, type: 2}
   timelines:
-  - {fileID: 11400000, guid: 94a7db63a65aca44c84727da9316655d, type: 2}
+  - {fileID: 11400000, guid: 536bf1bebf892eb4f946afca3fbbdaeb, type: 2}
   timeline: {fileID: 0}
   startDist: 0
 --- !u!1 &608048341
@@ -4878,6 +4887,7 @@ RectTransform:
   - {fileID: 592946921}
   - {fileID: 1649941182}
   - {fileID: 2073829190}
+  - {fileID: 1826356822}
   m_Father: {fileID: 2065386960}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7549,7 +7559,7 @@ MonoBehaviour:
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.5
   repairHealRate: 4
-  userLoad: 0.1
+  userLoad: 1
   expCurve:
     serializedVersion: 2
     m_Curve:
@@ -9015,7 +9025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionAnchor: {fileID: 1809227361}
-  energyDrain: 12
+  energyDrain: 9
   efficiencyDestroyed: 0
   efficiencyNormal: 1
   efficiencyMannedAdd: 0.5
@@ -10073,6 +10083,97 @@ Transform:
   m_Father: {fileID: 1679420321}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1826356821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1826356822}
+  - component: {fileID: 1826356825}
+  - component: {fileID: 1826356824}
+  - component: {fileID: 1826356823}
+  m_Layer: 5
+  m_Name: Speed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1826356822
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826356821}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 791191820}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -114.79004, y: 25}
+  m_SizeDelta: {x: 129.58, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1826356823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826356821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b22a2b9b403f34f91a72c146211abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bindTarget: {fileID: 1826356824}
+  template: {fileID: 11400000, guid: c567db79762f99d42ba81b33b3c512c5, type: 2}
+  parentNode: {fileID: 2065386961}
+  field: speed
+--- !u!114 &1826356824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826356821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 5
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '>>>>>'
+--- !u!222 &1826356825
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826356821}
+  m_CullTransparentMesh: 0
 --- !u!1 &1836233746
 GameObject:
   m_ObjectHideFlags: 0
@@ -10448,7 +10549,7 @@ MonoBehaviour:
   energyDrain: 0
   efficiencyDestroyed: 0
   efficiencyNormal: 1
-  efficiencyMannedAdd: 5
+  efficiencyMannedAdd: 4
   repairHealRate: 4
   userLoad: 1
   expCurve:
@@ -10486,7 +10587,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _lastEfficiency: 0
   currentEnergyConsumptionPerSecond: 0
-  generationRate: 6
+  generationRate: 6.5
 --- !u!114 &1868908285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12115,7 +12216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2073829188
 MonoBehaviour:
   m_ObjectHideFlags: 0
